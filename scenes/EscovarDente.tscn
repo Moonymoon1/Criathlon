@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://yyf2vlwjss4g"]
 
 [ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_im80d"]
-[ext_resource type="Texture2D" uid="uid://ba48t15ipjrsa" path="res://Sprite/Sprite-Test/escova-de-dente.png" id="2_g065s"]
 [ext_resource type="Script" uid="uid://cvg62g3jujr8h" path="res://scripts/escovar.gd" id="2_k2qrr"]
+[ext_resource type="Texture2D" uid="uid://pkuj5ync2t7m" path="res://Sprite/Sprite-Test/—Pngtree—black circles circular_5054163.png" id="3_g065s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tluv1"]
 
 [node name="EscovarDente" type="Node2D" unique_id=83990400]
 
@@ -12,10 +14,28 @@ texture = ExtResource("1_im80d")
 
 [node name="Escovar" type="Node2D" parent="." unique_id=1488854750]
 script = ExtResource("2_k2qrr")
-distancia_minima = 60.0
-limite_horizontal = 200.0
 
-[node name="Escova" type="Sprite2D" parent="Escovar" unique_id=1509141475]
-position = Vector2(924, 830)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_g065s")
+[node name="AreaEsquerda" type="Area2D" parent="Escovar" unique_id=898165699]
+position = Vector2(737, 811)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escovar/AreaEsquerda" unique_id=936498779]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_tluv1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Escovar/AreaEsquerda" unique_id=633950641]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_g065s")
+
+[node name="AreaDireita" type="Area2D" parent="Escovar" unique_id=2109315609]
+position = Vector2(1102, 811)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escovar/AreaDireita" unique_id=925411036]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_tluv1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Escovar/AreaDireita" unique_id=288920424]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_g065s")
+
+[connection signal="input_event" from="Escovar/AreaEsquerda" to="Escovar" method="_on_area_esquerda_input_event"]
+[connection signal="input_event" from="Escovar/AreaDireita" to="Escovar" method="_on_area_direita_input_event"]

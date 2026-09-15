@@ -7,3 +7,5 @@
 [node name="Fundo" type="Sprite2D" parent="." unique_id=992905732]
 position = Vector2(948, 545)
 texture = ExtResource("1_vhbg7")
+
+[node name="GameLavarRosto" type="Node2D" parent="." unique_id=212559247]
