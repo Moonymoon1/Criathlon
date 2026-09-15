@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://tc46u77lr5l5"]
 
 [ext_resource type="Texture2D" uid="uid://djoxtsy5wjtcn" path="res://Sprite/Sprite-Test/Banho.png" id="1_22eiy"]
-[ext_resource type="Script" uid="uid://bm0y6i14vy8b6" path="res://scenes/tomar_banho.gd" id="2_qwoxb"]
+[ext_resource type="Script" uid="uid://bm0y6i14vy8b6" path="res://scripts/tomar_banho.gd" id="2_qwoxb"]
 [ext_resource type="Texture2D" uid="uid://dxekksxho1on2" path="res://Sprite/Sprite-Test/—Pngtree—blue square cute soap clipart_5747858.png" id="3_qwoxb"]
 
 [node name="TomarBanho" type="Node2D" unique_id=1511323946]

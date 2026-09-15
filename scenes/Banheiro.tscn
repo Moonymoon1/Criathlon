@@ -31,6 +31,11 @@ func _on_area_tomar_banho_input_event(viewport: Node, event: InputEvent, shape_i
 func _on_area_lavar_rosto_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		get_tree().change_scene_to_file(\"res://scenes/LavarRosto.tscn\")
+
+
+func _on_area_lavar_roupa_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		get_tree().change_scene_to_file(\"res://scenes/LavarRoupa.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tluv1"]
@@ -56,7 +61,7 @@ position = Vector2(-1036, -73)
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_tluv1")
 
-[node name="Sprite2D" type="Sprite2D" parent="LavarRosto/AreaLavarRosto" unique_id=953719429]
+[node name="Pin" type="Sprite2D" parent="LavarRosto/AreaLavarRosto" unique_id=953719429]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_myqbf")
 
@@ -70,7 +75,7 @@ position = Vector2(465, 532)
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_tluv1")
 
-[node name="Sprite2D" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]
+[node name="Pin" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_myqbf")
 
@@ -84,10 +89,25 @@ position = Vector2(1590, 395)
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_tluv1")
 
-[node name="Sprite2D" type="Sprite2D" parent="TomarBanho/AreaTomarBanho" unique_id=601320674]
+[node name="Pin" type="Sprite2D" parent="TomarBanho/AreaTomarBanho" unique_id=601320674]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_myqbf")
+
+[node name="LavarRoupa" type="Node2D" parent="." unique_id=1938535573]
+position = Vector2(-634, 256)
+
+[node name="AreaLavarRoupa" type="Area2D" parent="LavarRoupa" unique_id=1437975709]
+position = Vector2(1590, 395)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=1274016396]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_tluv1")
+
+[node name="Pin" type="Sprite2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=1448845114]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_myqbf")
 
 [connection signal="input_event" from="LavarRosto/AreaLavarRosto" to="." method="_on_area_lavar_rosto_input_event"]
 [connection signal="input_event" from="EscovarDente/AreaEscovarDentes" to="." method="_on_area_escovar_dentes_input_event"]
 [connection signal="input_event" from="TomarBanho/AreaTomarBanho" to="." method="_on_area_tomar_banho_input_event"]
+[connection signal="input_event" from="LavarRoupa/AreaLavarRoupa" to="." method="_on_area_lavar_roupa_input_event"]
