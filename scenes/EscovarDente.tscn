@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://yyf2vlwjss4g"]
+
+[ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_im80d"]
+[ext_resource type="Texture2D" uid="uid://ba48t15ipjrsa" path="res://Sprite/Sprite-Test/escova-de-dente.png" id="2_g065s"]
+[ext_resource type="Script" uid="uid://cvg62g3jujr8h" path="res://scripts/escovar.gd" id="2_k2qrr"]
+
+[node name="EscovarDente" type="Node2D" unique_id=83990400]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=194868879]
+position = Vector2(936, 524)
+texture = ExtResource("1_im80d")
+
+[node name="Escovar" type="Node2D" parent="." unique_id=1488854750]
+script = ExtResource("2_k2qrr")
+distancia_minima = 60.0
+limite_horizontal = 200.0
+
+[node name="Escova" type="Sprite2D" parent="Escovar" unique_id=1509141475]
+position = Vector2(924, 830)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_g065s")

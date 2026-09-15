@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://tc46u77lr5l5"]
+
+[ext_resource type="Texture2D" uid="uid://djoxtsy5wjtcn" path="res://Sprite/Sprite-Test/Banho.png" id="1_22eiy"]
+[ext_resource type="Script" uid="uid://bm0y6i14vy8b6" path="res://scenes/tomar_banho.gd" id="2_qwoxb"]
+[ext_resource type="Texture2D" uid="uid://dxekksxho1on2" path="res://Sprite/Sprite-Test/—Pngtree—blue square cute soap clipart_5747858.png" id="3_qwoxb"]
+
+[node name="TomarBanho" type="Node2D" unique_id=1511323946]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=124925730]
+position = Vector2(956, 541)
+texture = ExtResource("1_22eiy")
+
+[node name="TomarBanho" type="Node2D" parent="." unique_id=706627018]
+position = Vector2(0, -1)
+script = ExtResource("2_qwoxb")
+area_corpo = Rect2(-250, -300, 450, 600)
+
+[node name="Sabonete" type="Sprite2D" parent="TomarBanho" unique_id=597510040]
+position = Vector2(901, 217)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_qwoxb")

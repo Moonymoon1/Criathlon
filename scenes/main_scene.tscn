@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://b5ja67y4g01t2"]
 
 [ext_resource type="PackedScene" uid="uid://bi5bfb3grxy0u" path="res://objects/interactable.tscn" id="1_w2twt"]
-[ext_resource type="Script" uid="uid://dh72horq2hoi4" path="res://scripts/escovar.gd" id="2_7ykc4"]
 [ext_resource type="Script" uid="uid://crcxvcqi32mwe" path="res://scripts/banho.gd" id="2_pw63i"]
-[ext_resource type="Texture2D" uid="uid://ba48t15ipjrsa" path="res://Sprite/Sprite-Test/escova-de-dente.png" id="3_gubc5"]
 [ext_resource type="Texture2D" uid="uid://dxekksxho1on2" path="res://Sprite/Sprite-Test/—Pngtree—blue square cute soap clipart_5747858.png" id="5_rt2n2"]
 
 [node name="Node2D" type="Node2D" unique_id=1999169728]
@@ -11,14 +9,6 @@
 [node name="Area2D" parent="." unique_id=126247300 instance=ExtResource("1_w2twt")]
 position = Vector2(755, 417.99997)
 scale = Vector2(5.1170397, 5.1170397)
-
-[node name="Escovar" type="Node2D" parent="." unique_id=1299600763]
-script = ExtResource("2_7ykc4")
-
-[node name="Escova" type="Sprite2D" parent="Escovar" unique_id=1874400665]
-position = Vector2(333, 805)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_gubc5")
 
 [node name="Banho" type="Node2D" parent="." unique_id=1937628613]
 script = ExtResource("2_pw63i")

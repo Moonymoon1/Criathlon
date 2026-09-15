@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://clc2ahl0e1bdw"]
+
+[ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_vhbg7"]
+
+[node name="LavarRosto" type="Node2D" unique_id=665535272]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=992905732]
+position = Vector2(948, 545)
+texture = ExtResource("1_vhbg7")

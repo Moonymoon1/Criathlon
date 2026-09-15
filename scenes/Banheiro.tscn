@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bg4638bp75mem"]
+
+[ext_resource type="Texture2D" uid="uid://cve4p051l53rj" path="res://Sprite/Sprite-Test/Ratinho depressivo - Editado (1).png" id="1_sjufs"]
+[ext_resource type="Texture2D" uid="uid://dngf3nqnat7pk" path="res://Sprite/Sprite-Test/pin.png" id="3_myqbf"]
+[ext_resource type="Script" uid="uid://cg75aad1qxmib" path="res://scripts/lavar_rosto.gd" id="4_myqbf"]
+
+[sub_resource type="GDScript" id="GDScript_bhpll"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_area_escovar_dentes_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		get_tree().change_scene_to_file(\"res://scenes/EscovarDente.tscn\")
+
+
+func _on_area_tomar_banho_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		get_tree().change_scene_to_file(\"res://scenes/TomarBanho.tscn\")
+
+
+func _on_area_lavar_rosto_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		get_tree().change_scene_to_file(\"res://scenes/LavarRosto.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tluv1"]
+size = Vector2(70, 101)
+
+[node name="Banheiro" type="Node2D" unique_id=1711276870]
+position = Vector2(-124, -57)
+script = SubResource("GDScript_bhpll")
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=579715134]
+position = Vector2(1101, 599)
+scale = Vector2(0.67115504, 0.671155)
+texture = ExtResource("1_sjufs")
+
+[node name="LavarRosto" type="Node2D" parent="." unique_id=1801283802]
+position = Vector2(1670, 391)
+script = ExtResource("4_myqbf")
+
+[node name="AreaLavarRosto" type="Area2D" parent="LavarRosto" unique_id=1155796780]
+position = Vector2(-1036, -73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LavarRosto/AreaLavarRosto" unique_id=713245949]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_tluv1")
+
+[node name="Sprite2D" type="Sprite2D" parent="LavarRosto/AreaLavarRosto" unique_id=953719429]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_myqbf")
+
+[node name="EscovarDente" type="Node2D" parent="." unique_id=1089664062]
+position = Vector2(140, 34)
+
+[node name="AreaEscovarDentes" type="Area2D" parent="EscovarDente" unique_id=1450915499]
+position = Vector2(465, 532)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscovarDente/AreaEscovarDentes" unique_id=2095293242]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_tluv1")
+
+[node name="Sprite2D" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_myqbf")
+
+[node name="TomarBanho" type="Node2D" parent="." unique_id=2092504001]
+position = Vector2(108, 37)
+
+[node name="AreaTomarBanho" type="Area2D" parent="TomarBanho" unique_id=972067870]
+position = Vector2(1590, 395)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TomarBanho/AreaTomarBanho" unique_id=737338742]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_tluv1")
+
+[node name="Sprite2D" type="Sprite2D" parent="TomarBanho/AreaTomarBanho" unique_id=601320674]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_myqbf")
+
+[connection signal="input_event" from="LavarRosto/AreaLavarRosto" to="." method="_on_area_lavar_rosto_input_event"]
+[connection signal="input_event" from="EscovarDente/AreaEscovarDentes" to="." method="_on_area_escovar_dentes_input_event"]
+[connection signal="input_event" from="TomarBanho/AreaTomarBanho" to="." method="_on_area_tomar_banho_input_event"]
