@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://clc2ahl0e1bdw"]
 
 [ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_vhbg7"]
+[ext_resource type="Texture2D" uid="uid://pkuj5ync2t7m" path="res://Sprite/Sprite-Test/—Pngtree—black circles circular_5054163.png" id="2_3o67t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nlsrg"]
 
 [node name="LavarRosto" type="Node2D" unique_id=665535272]
 
@@ -9,3 +12,14 @@ position = Vector2(948, 545)
 texture = ExtResource("1_vhbg7")
 
 [node name="GameLavarRosto" type="Node2D" parent="." unique_id=212559247]
+
+[node name="AreaLavarRosto" type="Area2D" parent="GameLavarRosto" unique_id=952550842]
+position = Vector2(928, 606)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLavarRosto/AreaLavarRosto" unique_id=1080608609]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_nlsrg")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameLavarRosto/AreaLavarRosto" unique_id=497217139]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_3o67t")
