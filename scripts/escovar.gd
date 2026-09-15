@@ -1,7 +1,6 @@
 extends Node2D
 
-@export var cliques_necessarios: int = 5   # quantos cliques em CADA lado pra terminar
-
+@export var cliques_necessarios: int = 5   
 var contador_esquerda: int = 0
 var contador_direita: int = 0
 var terminou: bool = false
@@ -9,6 +8,8 @@ var terminou: bool = false
 func _on_area_esquerda_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if terminou:
 		return
+		
+		
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		contador_esquerda += 1
 		print("Esquerda: ", contador_esquerda, "/", cliques_necessarios)
@@ -17,6 +18,8 @@ func _on_area_esquerda_input_event(viewport: Node, event: InputEvent, shape_idx:
 func _on_area_direita_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if terminou:
 		return
+	
+		
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		contador_direita += 1
 		print("Direita: ", contador_direita, "/", cliques_necessarios)
