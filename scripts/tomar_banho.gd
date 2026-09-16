@@ -1,13 +1,12 @@
 extends Node2D
 
-@export var distancia_total_necessaria: float = 3000.0   # soma de pixels que precisa esfregar até terminar
-@export var area_corpo: Rect2 = Rect2(-150, -200, 600, 800)  # retângulo (x, y, largura, altura) relativo ao ponto onde clicou
-
+@export var distancia_total_necessaria: float = 3000.0   
+@export var area_corpo: Rect2 = Rect2(-150, -200, 600, 800)  
 @onready var sabonete: Node2D = $Sabonete
 
 var arrastando: bool = false
-var centro: Vector2 = Vector2.ZERO       # posição onde o sabonete estava quando você clicou
-var posicao_relativa: Vector2 = Vector2.ZERO  # o quanto já andou a partir do centro
+var centro: Vector2 = Vector2.ZERO      
+var posicao_relativa: Vector2 = Vector2.ZERO  
 var distancia_percorrida: float = 0.0
 var terminou: bool = false
 

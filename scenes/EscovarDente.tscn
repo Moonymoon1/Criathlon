@@ -2,40 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_im80d"]
 [ext_resource type="Script" uid="uid://cvg62g3jujr8h" path="res://scripts/escovar.gd" id="2_k2qrr"]
-[ext_resource type="Texture2D" uid="uid://pkuj5ync2t7m" path="res://Sprite/Sprite-Test/—Pngtree—black circles circular_5054163.png" id="3_g065s"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tluv1"]
+[ext_resource type="Texture2D" uid="uid://cq1d4lywtuprm" path="res://Sprite/Srites - Certos/escova_base.png" id="3_g065s"]
+[ext_resource type="Texture2D" uid="uid://bqvrp4x04w7yj" path="res://Sprite/Srites - Certos/escova_base_1de_6.png" id="3_rn50q"]
+[ext_resource type="Texture2D" uid="uid://bu3py8cjw3j66" path="res://Sprite/Srites - Certos/escova_base_3de_6.png" id="4_j53xn"]
+[ext_resource type="Texture2D" uid="uid://datuy5k7hvfy2" path="res://Sprite/Srites - Certos/escova_base_2de_6.png" id="4_vucf0"]
+[ext_resource type="Texture2D" uid="uid://ddnpavwc67a6x" path="res://Sprite/Srites - Certos/escova_base_4de_6.png" id="5_vucf0"]
+[ext_resource type="Texture2D" uid="uid://bl5u4ooiceqv3" path="res://Sprite/Srites - Certos/escova_base_5de_6.png" id="6_lhibs"]
+[ext_resource type="Texture2D" uid="uid://xcdubdrfso6n" path="res://Sprite/Srites - Certos/escova_base_6de_6.png" id="7_t7tqh"]
 
 [node name="EscovarDente" type="Node2D" unique_id=83990400]
 
-[node name="Fundo" type="Sprite2D" parent="." unique_id=194868879]
+[node name="Escovar" type="Node2D" parent="." unique_id=1488854750]
+script = ExtResource("2_k2qrr")
+frames_barra = Array[Texture2D]([ExtResource("3_g065s"), ExtResource("3_rn50q"), ExtResource("4_vucf0"), ExtResource("4_j53xn"), ExtResource("5_vucf0"), ExtResource("6_lhibs"), ExtResource("7_t7tqh")])
+
+[node name="Fundo" type="Sprite2D" parent="Escovar" unique_id=194868879]
 position = Vector2(936, 524)
 texture = ExtResource("1_im80d")
 
-[node name="Escovar" type="Node2D" parent="." unique_id=1488854750]
-script = ExtResource("2_k2qrr")
-
-[node name="AreaEsquerda" type="Area2D" parent="Escovar" unique_id=898165699]
-position = Vector2(737, 811)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Escovar/AreaEsquerda" unique_id=936498779]
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_tluv1")
-
-[node name="Bolinha" type="Sprite2D" parent="Escovar/AreaEsquerda" unique_id=633950641]
-scale = Vector2(0.1, 0.1)
+[node name="SpriteBarra" type="Sprite2D" parent="Escovar" unique_id=2035958122]
+position = Vector2(320, 980)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_g065s")
-
-[node name="AreaDireita" type="Area2D" parent="Escovar" unique_id=2109315609]
-position = Vector2(1102, 811)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Escovar/AreaDireita" unique_id=925411036]
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_tluv1")
-
-[node name="Bolinha" type="Sprite2D" parent="Escovar/AreaDireita" unique_id=288920424]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_g065s")
-
-[connection signal="input_event" from="Escovar/AreaEsquerda" to="Escovar" method="_on_area_esquerda_input_event"]
-[connection signal="input_event" from="Escovar/AreaDireita" to="Escovar" method="_on_area_direita_input_event"]
