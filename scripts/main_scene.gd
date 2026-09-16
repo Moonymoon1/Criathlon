@@ -14,6 +14,7 @@ func load_dialog_lines(file_path):
 	dialog_lines = load_dialog(file_path)
 	_process_current_line()
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if dialog_lines == []:
 		pass

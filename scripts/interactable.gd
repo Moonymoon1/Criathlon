@@ -17,6 +17,7 @@ var task_done = false
 func _ready() -> void:
 	pass 
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	_show_text()
 	if Input.is_action_just_pressed("ui_accept"):

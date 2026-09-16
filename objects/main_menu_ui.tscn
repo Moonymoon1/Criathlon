@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://7cgptik2v5bh"]
 
-[ext_resource type="PackedScene" uid="uid://b5ja67y4g01t2" path="res://scenes/main_scene.tscn" id="2_1kkoq"]
 [ext_resource type="PackedScene" uid="uid://cdsdj5m8yipop" path="res://objects/button_template.tscn" id="2_1pij0"]
 
 [node name="main_menu_UI" type="Control" unique_id=1789508741]
@@ -30,7 +29,6 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_font_sizes/font_size = 42
 text = "Start
 "
 open_menu = NodePath("../../play_menu")
@@ -57,17 +55,15 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_font_sizes/font_size = 42
 text = "Play
 "
 close_menu = NodePath("..")
-change_scene = ExtResource("2_1kkoq")
+change_scene = "uid://b5ja67y4g01t2"
 
 [node name="options" parent="play_menu" unique_id=1794426173 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("2_1pij0")]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_font_sizes/font_size = 42
 text = "Options"
 open_menu = NodePath("../../options_menu")
 close_menu = NodePath("..")
@@ -76,7 +72,6 @@ close_menu = NodePath("..")
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_font_sizes/font_size = 42
 text = "Back"
 open_menu = NodePath("../../start_menu")
 close_menu = NodePath("..")
@@ -126,7 +121,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_font_sizes/font_size = 42
 text = "Back"
 open_menu = NodePath("../../play_menu")
 close_menu = NodePath("..")
