@@ -17,7 +17,7 @@ script = ExtResource("2_k2qrr")
 frames_barra = Array[Texture2D]([ExtResource("3_g065s"), ExtResource("3_rn50q"), ExtResource("4_vucf0"), ExtResource("4_j53xn"), ExtResource("5_vucf0"), ExtResource("6_lhibs"), ExtResource("7_t7tqh")])
 
 [node name="Fundo" type="Sprite2D" parent="Escovar" unique_id=194868879]
-position = Vector2(936, 524)
+position = Vector2(955, 541)
 texture = ExtResource("1_im80d")
 
 [node name="SpriteBarra" type="Sprite2D" parent="Escovar" unique_id=2035958122]

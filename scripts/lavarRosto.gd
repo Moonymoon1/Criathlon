@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var distancia_necessaria: float = 250.0
+@export var distancia_necessaria: float = 400
 
 @onready var bolinha: Area2D = $AreaLavarRosto
 
