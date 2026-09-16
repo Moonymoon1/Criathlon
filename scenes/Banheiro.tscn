@@ -48,7 +48,16 @@ func _on_area_lavar_roupa_input_event(viewport: Node, event: InputEvent, shape_i
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tluv1"]
-size = Vector2(70, 101)
+size = Vector2(234, 345)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl2yw"]
+size = Vector2(365, 104.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhpll"]
+size = Vector2(201, 217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyaeq"]
+size = Vector2(241, 301)
 
 [node name="Banheiro" type="Node2D" unique_id=1711276870]
 position = Vector2(-124, -57)
@@ -66,7 +75,7 @@ position = Vector2(1670, 391)
 position = Vector2(-1036, -73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LavarRosto/AreaLavarRosto" unique_id=713245949]
-position = Vector2(0, -0.5)
+position = Vector2(7, 44.5)
 shape = SubResource("RectangleShape2D_tluv1")
 
 [node name="Pin" type="Sprite2D" parent="LavarRosto/AreaLavarRosto" unique_id=953719429]
@@ -80,8 +89,8 @@ position = Vector2(140, 34)
 position = Vector2(465, 532)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EscovarDente/AreaEscovarDentes" unique_id=2095293242]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_tluv1")
+position = Vector2(8.5, 68.25)
+shape = SubResource("RectangleShape2D_kl2yw")
 
 [node name="Pin" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]
 scale = Vector2(0.2, 0.2)
@@ -94,10 +103,11 @@ position = Vector2(108, 37)
 position = Vector2(1590, 395)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TomarBanho/AreaTomarBanho" unique_id=737338742]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_tluv1")
+position = Vector2(-68, -155)
+shape = SubResource("RectangleShape2D_bhpll")
 
 [node name="Pin" type="Sprite2D" parent="TomarBanho/AreaTomarBanho" unique_id=601320674]
+position = Vector2(-71.99999, -165.00002)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_myqbf")
 
@@ -107,9 +117,9 @@ position = Vector2(-634, 256)
 [node name="AreaLavarRoupa" type="Area2D" parent="LavarRoupa" unique_id=1437975709]
 position = Vector2(1590, 395)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=1274016396]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_tluv1")
+[node name="CollisionShape_LR" type="CollisionShape2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=567556894]
+position = Vector2(4.5, 105.5)
+shape = SubResource("RectangleShape2D_jyaeq")
 
 [node name="Pin" type="Sprite2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=1448845114]
 scale = Vector2(0.2, 0.2)
