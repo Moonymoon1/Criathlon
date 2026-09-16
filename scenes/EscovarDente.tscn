@@ -24,3 +24,12 @@ texture = ExtResource("1_im80d")
 position = Vector2(320, 980)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_g065s")
+
+[node name="BotaoVerificar" type="Button" parent="Escovar" unique_id=1590701420]
+offset_left = 48.0
+offset_top = 147.0
+offset_right = 458.0
+offset_bottom = 261.0
+text = "Verificar"
+
+[connection signal="pressed" from="Escovar/BotaoVerificar" to="Escovar" method="_on_botao_verificar_pressed"]
