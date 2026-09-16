@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cdsdj5m8yipop"]
+
+[ext_resource type="Script" uid="uid://cr2jhxefe3j8d" path="res://scripts/button_template.gd" id="1_ewu61"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 1.0
+
+[node name="Button" type="Button" unique_id=11209475]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_yf5fn")
+text = "Start"
+script = ExtResource("1_ewu61")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
