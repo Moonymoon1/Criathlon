@@ -22,7 +22,7 @@ position = Vector2(737, 811)
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_tluv1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Escovar/AreaEsquerda" unique_id=633950641]
+[node name="Bolinha" type="Sprite2D" parent="Escovar/AreaEsquerda" unique_id=633950641]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_g065s")
 
@@ -33,7 +33,7 @@ position = Vector2(1102, 811)
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_tluv1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Escovar/AreaDireita" unique_id=288920424]
+[node name="Bolinha" type="Sprite2D" parent="Escovar/AreaDireita" unique_id=288920424]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_g065s")
 
