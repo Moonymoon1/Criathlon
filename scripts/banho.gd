@@ -26,16 +26,13 @@ func _input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	if event is InputEventMouseMotion and arrastando:
-		# Soma o movimento nos dois eixos 
 		posicao_relativa += event.relative
 
-		# Trava dentro do retângulo do corpo
 		posicao_relativa.x = clamp(posicao_relativa.x, area_corpo.position.x, area_corpo.position.x + area_corpo.size.x)
 		posicao_relativa.y = clamp(posicao_relativa.y, area_corpo.position.y, area_corpo.position.y + area_corpo.size.y)
 
 		sabonete.global_position = centro + posicao_relativa
 
-		# Soma a distância totalaaa percorrida 
 		distancia_percorrida += event.relative.length()
 		if distancia_percorrida >= distancia_total_necessaria:
 			terminou = true

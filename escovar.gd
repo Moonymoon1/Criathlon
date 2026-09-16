@@ -2,13 +2,13 @@ extends Node2D
 
 @export var distancia_minima: float = 40.0
 @export var movimentos_para_ganhar: int = 10
-@export var limite_horizontal: float = 100.0   # quanto a escova pode se afastar do centro pra cada lado
+@export var limite_horizontal: float = 100.0   
 
 @onready var escova: Node2D = $Escova
 
 var arrastando: bool = false
 var centro_x: float = 0.0
-var deslocamento: float = 0.0     # quanto a escova já andou a partir do centro
+var deslocamento: float = 0.0    
 var acumulado_desde_troca: float = 0.0
 var direcao_anterior: int = 0
 var contador: int = 0
@@ -23,13 +23,12 @@ func _input(event: InputEvent) -> void:
 			arrastando = true
 			centro_x = escova.global_position.x
 			deslocamento = 0.0
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # esconde e trava o cursor
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 		elif not event.pressed and arrastando:
 			arrastando = false
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)   # devolve o cursor normal
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)   
 
 	if event is InputEventMouseMotion and arrastando:
-		# event.relative = quanto o mouse se moveu desde o último frame 
 		deslocamento = clamp(deslocamento + event.relative.x, -limite_horizontal, limite_horizontal)
 		escova.global_position.x = centro_x + deslocamento
 
