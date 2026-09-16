@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_vhbg7"]
 [ext_resource type="Texture2D" uid="uid://pkuj5ync2t7m" path="res://Sprite/Sprite-Test/—Pngtree—black circles circular_5054163.png" id="2_3o67t"]
-[ext_resource type="Script" uid="uid://b1uwjjdh70ert" path="res://scripts/game_lavar_rosto.gd" id="2_nlsrg"]
+[ext_resource type="Script" uid="uid://b1uwjjdh70ert" path="res://scripts/lavarRosto.gd" id="2_nlsrg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nlsrg"]
 

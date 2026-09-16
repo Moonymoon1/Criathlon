@@ -15,8 +15,6 @@ texture = ExtResource("1_22eiy")
 [node name="TomarBanho" type="Node2D" parent="." unique_id=706627018]
 position = Vector2(0, -1)
 script = ExtResource("2_qwoxb")
-distancia_total_necessaria = 6000.0
-area_corpo = Rect2(-200, -300, 600, 800)
 
 [node name="AreaCabeca" type="Area2D" parent="TomarBanho" unique_id=2002439730]
 position = Vector2(1102, 811)

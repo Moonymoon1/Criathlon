@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var distancia_necessaria: float = 400.0   
+@export var distancia_necessaria: float = 250.0
 
 @onready var bolinha: Area2D = $AreaLavarRosto
 
@@ -21,7 +21,7 @@ func _input(event: InputEvent) -> void:
 
 	if event is InputEventMouseButton and not event.pressed:
 		arrastando = false
-		bolinha.global_position = posicao_inicial   
+		bolinha.global_position = posicao_inicial
 
 	if event is InputEventMouseMotion:
 		var y_alvo: float = clamp(event.position.y, posicao_inicial.y, posicao_inicial.y + distancia_necessaria)
@@ -31,3 +31,6 @@ func _input(event: InputEvent) -> void:
 			arrastando = false
 			terminou = true
 			print("Rosto lavado!")
+
+			GameState.completar("lavar_rosto")
+			get_tree().change_scene_to_file("res://scenes/Banheiro.tscn")

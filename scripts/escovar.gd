@@ -7,7 +7,7 @@ extends Node2D
 
 var contador_esquerda: int = 0
 var contador_direita: int = 0
-var lado_atual: String = "esquerda"   # qual lado está liberado pra clicar agora
+var lado_atual: String = "esquerda"   
 var terminou: bool = false
 
 func _ready() -> void:
@@ -37,9 +37,10 @@ func _trocar_lado() -> void:
 		area_esquerda.visible = false
 		area_direita.visible = false
 		print("Dente escovado!")
+		GameState.completar("escovar_dente")
+		get_tree().change_scene_to_file("res://scenes/Banheiro.tscn")
 		return
 
-	# alterna pro outro lado (a menos que ele já tenha terminado, aí continua no mesmo)
 	if lado_atual == "esquerda" and contador_direita < cliques_necessarios:
 		lado_atual = "direita"
 	elif lado_atual == "direita" and contador_esquerda < cliques_necessarios:

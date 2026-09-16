@@ -41,3 +41,5 @@ func _input(event: InputEvent) -> void:
 			terminou = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			print("Banho concluído!")
+			GameState.completar("tomar_banho")
+			get_tree().change_scene_to_file("res://scenes/Banheiro.tscn")
