@@ -73,7 +73,7 @@ position = Vector2(-7.5, 193.375)
 shape = SubResource("RectangleShape2D_kl2yw")
 
 [node name="Pin" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]
-position = Vector2(0, 56.999996)
+position = Vector2(0, 146.99998)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_myqbf")
 
