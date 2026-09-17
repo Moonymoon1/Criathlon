@@ -1,20 +1,21 @@
 extends Node2D
 
-@export var cliques_necessarios: int = 3
-@export var frames_barra: Array[Texture2D] = []
+@export var movimentos_necessarios: int = 6
+@export var distancia_minima: float = 40.0
 
-@onready var sprite_barra: Sprite2D = $SpriteBarra
+@onready var escova: Node2D = $Escova
+@onready var espuma: Sprite2D = $Espuma
 @onready var botao_verificar: Button = $BotaoVerificar
 
-var contador_esquerdo: int = 0
-var contador_direito: int = 0
-var esperando: int = MOUSE_BUTTON_LEFT
-var aguardando_confirmacao: bool = false
-var terminou: bool = false
 var liberado: bool = false
+var arrastando: bool = false
+var terminou: bool = false
+var posicao_inicial_x: float = 0.0
+var ultima_direcao: int = 0
+var contador: int = 0
 
 func _ready() -> void:
-	_atualizar_sprite()
+	espuma.modulate.a = 0.0
 
 func _on_botao_verificar_pressed() -> void:
 	if GameState.pode_fazer("escovar_dente"):
@@ -28,30 +29,28 @@ func _input(event: InputEvent) -> void:
 	if not liberado or terminou:
 		return
 
-	if aguardando_confirmacao:
-		if event is InputEventMouseButton and event.pressed:
-			terminou = true
-			print("Dente escovado!")
-			GameState.completar("escovar_dente")
-			Transicao.trocar_cena("res://scenes/Banheiro.tscn")
-		return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and escova.global_position.distance_to(event.position) < 60.0:
+			arrastando = true
+			posicao_inicial_x = event.position.x
+		elif not event.pressed:
+			arrastando = false
 
-	if event is InputEventMouseButton and event.pressed and event.button_index == esperando:
-		if esperando == MOUSE_BUTTON_LEFT:
-			contador_esquerdo += 1
-			esperando = MOUSE_BUTTON_RIGHT
-		else:
-			contador_direito += 1
-			esperando = MOUSE_BUTTON_LEFT
+	if event is InputEventMouseMotion and arrastando:
+		escova.global_position.x = event.position.x
 
-		_atualizar_sprite()
+		var diferenca: float = event.position.x - posicao_inicial_x
+		if abs(diferenca) >= distancia_minima:
+			var direcao_atual: int = 1 if diferenca > 0 else -1
+			if direcao_atual != ultima_direcao and ultima_direcao != 0:
+				contador += 1
+				espuma.modulate.a = float(contador) / movimentos_necessarios
 
-		if contador_esquerdo >= cliques_necessarios and contador_direito >= cliques_necessarios:
-			aguardando_confirmacao = true
+				if contador >= movimentos_necessarios:
+					terminou = true
+					print("Dente escovado!")
+					GameState.completar("escovar_dente")
+					Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 
-func _atualizar_sprite() -> void:
-	if frames_barra.is_empty():
-		return
-	var total_cliques: int = contador_esquerdo + contador_direito
-	var indice: int = clamp(total_cliques, 0, frames_barra.size() - 1)
-	sprite_barra.texture = frames_barra[indice]
+			ultima_direcao = direcao_atual
+			posicao_inicial_x = event.position.x

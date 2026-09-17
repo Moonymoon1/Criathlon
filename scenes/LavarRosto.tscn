@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://clc2ahl0e1bdw"]
 
 [ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_vhbg7"]
-[ext_resource type="Texture2D" uid="uid://pkuj5ync2t7m" path="res://Sprite/Sprite-Test/—Pngtree—black circles circular_5054163.png" id="2_3o67t"]
 [ext_resource type="Script" uid="uid://b1uwjjdh70ert" path="res://scripts/lavarRosto.gd" id="2_nlsrg"]
-[ext_resource type="Texture2D" uid="uid://cq1d4lywtuprm" path="res://Sprite/Srites - Certos/escova_base.png" id="3_x8oay"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nlsrg"]
+[ext_resource type="Texture2D" uid="uid://dxekksxho1on2" path="res://Sprite/Sprite-Test/—Pngtree—blue square cute soap clipart_5747858.png" id="3_nlsrg"]
 
 [node name="LavarRosto" type="Node2D" unique_id=665535272]
 
@@ -16,22 +13,6 @@ texture = ExtResource("1_vhbg7")
 [node name="GameLavarRosto" type="Node2D" parent="." unique_id=212559247]
 script = ExtResource("2_nlsrg")
 
-[node name="AreaLavarRosto" type="Area2D" parent="GameLavarRosto" unique_id=952550842]
-position = Vector2(960, 327)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLavarRosto/AreaLavarRosto" unique_id=1080608609]
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_nlsrg")
-
-[node name="Bolinha" type="Sprite2D" parent="GameLavarRosto/AreaLavarRosto" unique_id=497217139]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_3o67t")
-
-[node name="SpriteBarra" type="Sprite2D" parent="GameLavarRosto" unique_id=483241027]
-position = Vector2(320, 980)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_x8oay")
-
 [node name="BotaoVerificar" type="Button" parent="GameLavarRosto" unique_id=904465455]
 offset_left = 61.0
 offset_top = 135.0
@@ -39,5 +20,11 @@ offset_right = 287.0
 offset_bottom = 213.0
 text = "Verificar"
 
-[connection signal="input_event" from="GameLavarRosto/AreaLavarRosto" to="GameLavarRosto" method="_on_area_lavar_rosto_input_event"]
+[node name="Toalha" type="Sprite2D" parent="GameLavarRosto" unique_id=1441328111]
+position = Vector2(972.00006, 806)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_nlsrg")
+
+[node name="Rosto" type="Sprite2D" parent="GameLavarRosto" unique_id=28928918]
+
 [connection signal="pressed" from="GameLavarRosto/BotaoVerificar" to="GameLavarRosto" method="_on_botao_verificar_pressed"]
