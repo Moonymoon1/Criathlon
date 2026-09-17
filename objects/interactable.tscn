@@ -7,6 +7,10 @@
 
 [node name="Area2D" type="Area2D" unique_id=126247300]
 script = ExtResource("1_u3dfy")
+have_energy = true
+failed_task_txt = "não consigo fazer isso agroa..."
+succeded_task_txt = "vou fazer isso agora!"
+already_done_task_txt = "já fiz isso"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1029443412]
 scale = Vector2(0.155, 0.155)

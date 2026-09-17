@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://7cgptik2v5bh"]
+
+[ext_resource type="PackedScene" uid="uid://cdsdj5m8yipop" path="res://objects/button_template.tscn" id="2_1pij0"]
+
+[node name="main_menu_UI" type="Control" unique_id=1789508741]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start_menu" type="VBoxContainer" parent="." unique_id=812447473]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -10.0
+offset_right = 170.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="start" parent="start_menu" unique_id=11209475 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("2_1pij0")]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Start
+"
+open_menu = NodePath("../../play_menu")
+close_menu = NodePath("..")
+
+[node name="play_menu" type="VBoxContainer" parent="." unique_id=1461140651]
+process_mode = 4
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -10.0
+offset_right = 170.0
+offset_bottom = 410.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="play" parent="play_menu" unique_id=1952329969 node_paths=PackedStringArray("close_menu") instance=ExtResource("2_1pij0")]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Play
+"
+close_menu = NodePath("..")
+change_scene = "uid://b5ja67y4g01t2"
+
+[node name="options" parent="play_menu" unique_id=1794426173 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("2_1pij0")]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Options"
+open_menu = NodePath("../../options_menu")
+close_menu = NodePath("..")
+
+[node name="back" parent="play_menu" unique_id=243169266 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("2_1pij0")]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Back"
+open_menu = NodePath("../../start_menu")
+close_menu = NodePath("..")
+
+[node name="options_menu" type="VBoxContainer" parent="." unique_id=720999526]
+process_mode = 4
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -10.0
+offset_right = 170.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="msc_volume_label" type="Label" parent="options_menu" unique_id=1706219872]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_font_sizes/font_size = 42
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="msc_volume_slider" type="HSlider" parent="options_menu" unique_id=108787357]
+layout_mode = 2
+
+[node name="sfx_volume_label" type="Label" parent="options_menu" unique_id=902543468]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_font_sizes/font_size = 42
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_volume_slider" type="HSlider" parent="options_menu" unique_id=1668872957]
+layout_mode = 2
+
+[node name="back" parent="options_menu" unique_id=455972408 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("2_1pij0")]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Back"
+open_menu = NodePath("../../play_menu")
+close_menu = NodePath("..")

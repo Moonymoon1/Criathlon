@@ -1,34 +1,49 @@
 [gd_scene format=3 uid="uid://yyf2vlwjss4g"]
 
-[ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_im80d"]
 [ext_resource type="Script" uid="uid://cvg62g3jujr8h" path="res://scripts/escovar.gd" id="2_k2qrr"]
-[ext_resource type="Texture2D" uid="uid://cq1d4lywtuprm" path="res://Sprite/Srites - Certos/escova_base.png" id="3_g065s"]
-[ext_resource type="Texture2D" uid="uid://bqvrp4x04w7yj" path="res://Sprite/Srites - Certos/escova_base_1de_6.png" id="3_rn50q"]
-[ext_resource type="Texture2D" uid="uid://bu3py8cjw3j66" path="res://Sprite/Srites - Certos/escova_base_3de_6.png" id="4_j53xn"]
-[ext_resource type="Texture2D" uid="uid://datuy5k7hvfy2" path="res://Sprite/Srites - Certos/escova_base_2de_6.png" id="4_vucf0"]
-[ext_resource type="Texture2D" uid="uid://ddnpavwc67a6x" path="res://Sprite/Srites - Certos/escova_base_4de_6.png" id="5_vucf0"]
-[ext_resource type="Texture2D" uid="uid://bl5u4ooiceqv3" path="res://Sprite/Srites - Certos/escova_base_5de_6.png" id="6_lhibs"]
-[ext_resource type="Texture2D" uid="uid://xcdubdrfso6n" path="res://Sprite/Srites - Certos/escova_base_6de_6.png" id="7_t7tqh"]
-[ext_resource type="Texture2D" uid="uid://d1q6ql4n3kvb3" path="res://Sprite/Sprite-Test/lacreatura.png" id="10_vucf0"]
+[ext_resource type="Texture2D" uid="uid://cktnalcfcjye4" path="res://Sprite/Sprite - Rato/ratotriste04.png" id="3_8rxqu"]
+[ext_resource type="Texture2D" uid="uid://dqud6ehieo35o" path="res://Sprite/Sprite - Banheiro/Espelho_Inteiro.png" id="3_416hn"]
+[ext_resource type="Texture2D" uid="uid://de8bmwuvj1333" path="res://Sprite/Sprite - Banheiro/espuma_asset.png" id="3_k2qrr"]
+[ext_resource type="Texture2D" uid="uid://bqi1b05mbkn4i" path="res://Sprite/Sprite - Banheiro/escova_asset.png" id="4_8rxqu"]
+[ext_resource type="Texture2D" uid="uid://ds3pmm2cbs7tg" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Background_SJanela.png" id="6_416hn"]
 
 [node name="EscovarDente" type="Node2D" unique_id=83990400]
 
 [node name="Escovar" type="Node2D" parent="." unique_id=1488854750]
 position = Vector2(0, -3)
 script = ExtResource("2_k2qrr")
-frames_barra = Array[Texture2D]([ExtResource("3_g065s"), ExtResource("3_rn50q"), ExtResource("4_vucf0"), ExtResource("4_j53xn"), ExtResource("5_vucf0"), ExtResource("6_lhibs"), ExtResource("7_t7tqh")])
+movimentos_necessarios = 15
 
-[node name="Fundo" type="Sprite2D" parent="Escovar" unique_id=194868879]
-position = Vector2(955, 541)
-texture = ExtResource("1_im80d")
+[node name="Fundo" type="Sprite2D" parent="Escovar" unique_id=57626785]
+position = Vector2(2752, 963)
+scale = Vector2(2, 2)
+texture = ExtResource("6_416hn")
 
-[node name="SpriteBarra" type="Sprite2D" parent="Escovar" unique_id=2035958122]
-position = Vector2(320, 980)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_g065s")
+[node name="Espelho" type="Sprite2D" parent="Escovar" unique_id=1883734987]
+position = Vector2(840, 1135)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_416hn")
 
-[node name="SpriteSujeira" type="Sprite2D" parent="Escovar" unique_id=698835335]
-visible = false
-position = Vector2(825, 831)
+[node name="Rosto" type="Sprite2D" parent="Escovar" unique_id=1361436616]
+position = Vector2(960, 610)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("10_vucf0")
+texture = ExtResource("3_8rxqu")
+
+[node name="Espuma" type="Sprite2D" parent="Escovar" unique_id=919337289]
+position = Vector2(977, 753)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_k2qrr")
+
+[node name="Escova" type="Sprite2D" parent="Escovar" unique_id=1126400533]
+position = Vector2(1109, 705)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_8rxqu")
+
+[node name="BotaoVerificar" type="Button" parent="Escovar" unique_id=1590701420]
+offset_left = 48.0
+offset_top = 147.0
+offset_right = 458.0
+offset_bottom = 261.0
+text = "Verificar"
+
+[connection signal="pressed" from="Escovar/BotaoVerificar" to="Escovar" method="_on_botao_verificar_pressed"]

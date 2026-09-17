@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://tc46u77lr5l5"]
 
 [ext_resource type="Texture2D" uid="uid://djoxtsy5wjtcn" path="res://Sprite/Sprite-Test/Banho.png" id="1_22eiy"]
-[ext_resource type="Script" uid="uid://bm0y6i14vy8b6" path="res://scripts/tomar_banho.gd" id="2_qwoxb"]
-[ext_resource type="Texture2D" uid="uid://pkuj5ync2t7m" path="res://Sprite/Sprite-Test/—Pngtree—black circles circular_5054163.png" id="3_qwoxb"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5fljy"]
+[ext_resource type="Script" uid="uid://dcx1uj4eacav8" path="res://scenes/tomar_banho.gd" id="2_22eiy"]
+[ext_resource type="Texture2D" uid="uid://c70env3embufh" path="res://Sprite/Sprite - Minigames/sabonete_teste.png" id="3_5fljy"]
+[ext_resource type="Texture2D" uid="uid://de8bmwuvj1333" path="res://Sprite/Sprite - Banheiro/espuma_asset.png" id="4_j01hu"]
 
 [node name="TomarBanho" type="Node2D" unique_id=1511323946]
 
@@ -12,28 +11,36 @@
 position = Vector2(956, 541)
 texture = ExtResource("1_22eiy")
 
-[node name="TomarBanho" type="Node2D" parent="." unique_id=706627018]
-position = Vector2(0, -1)
-script = ExtResource("2_qwoxb")
+[node name="TomarBanho" type="Node2D" parent="." unique_id=87196159]
+script = ExtResource("2_22eiy")
 
-[node name="AreaCabeca" type="Area2D" parent="TomarBanho" unique_id=2002439730]
-position = Vector2(1102, 811)
+[node name="Sabao" type="Sprite2D" parent="TomarBanho" unique_id=736145127]
+position = Vector2(446, 719.99994)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_5fljy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TomarBanho/AreaCabeca" unique_id=1745710476]
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_5fljy")
+[node name="BotaoVerificar" type="Button" parent="TomarBanho" unique_id=66773975]
+offset_left = 52.0
+offset_top = 209.0
+offset_right = 290.0
+offset_bottom = 279.0
+text = "ver"
 
-[node name="Sprite2D" type="Sprite2D" parent="TomarBanho/AreaCabeca" unique_id=1683972559]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_qwoxb")
+[node name="Manchas" type="Node2D" parent="TomarBanho" unique_id=2101839735]
 
-[node name="AreaCabeca2" type="Area2D" parent="TomarBanho" unique_id=911649131]
-position = Vector2(1102, 811)
+[node name="Sujeira" type="Sprite2D" parent="TomarBanho/Manchas" unique_id=1222888538]
+position = Vector2(729, 441)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_j01hu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TomarBanho/AreaCabeca2" unique_id=1495026000]
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_5fljy")
+[node name="Sujeira2" type="Sprite2D" parent="TomarBanho/Manchas" unique_id=549227157]
+position = Vector2(881, 712)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_j01hu")
 
-[node name="Sprite2D" type="Sprite2D" parent="TomarBanho/AreaCabeca2" unique_id=375008353]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_qwoxb")
+[node name="Sujeira3" type="Sprite2D" parent="TomarBanho/Manchas" unique_id=2079088477]
+position = Vector2(1090, 439)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_j01hu")
+
+[connection signal="pressed" from="TomarBanho/BotaoVerificar" to="TomarBanho" method="_on_botao_verificar_pressed"]
