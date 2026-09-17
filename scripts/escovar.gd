@@ -21,7 +21,7 @@ func _on_botao_verificar_pressed() -> void:
 		liberado = true
 		botao_verificar.visible = false
 	else:
-		print("Não dá pra escovar o dente")
+		print("Ainda não dá pra escovar o dente hoje!")
 		Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 
 func _input(event: InputEvent) -> void:
@@ -31,12 +31,9 @@ func _input(event: InputEvent) -> void:
 	if aguardando_confirmacao:
 		if event is InputEventMouseButton and event.pressed:
 			terminou = true
-			print("Dente escovado")
-			var avancou_dia: bool = GameState.completar("escovar_dente")
-			if avancou_dia:
-				Transicao.trocar_cena("res://scenes/Quarto.tscn")
-			else:
-				Transicao.trocar_cena("res://scenes/Banheiro.tscn")
+			print("Dente escovado!")
+			GameState.completar("escovar_dente")
+			Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 		return
 
 	if event is InputEventMouseButton and event.pressed and event.button_index == esperando:

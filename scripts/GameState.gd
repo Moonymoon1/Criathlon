@@ -2,7 +2,6 @@ extends Node
 
 var dia_atual: int = 1
 var atividades_feitas: Dictionary = {}
-var pronto_para_dormir: bool = false
 
 func completar(atividade: String) -> bool:
 	atividades_feitas[atividade] = true
@@ -37,6 +36,5 @@ func _verificar_avanco() -> bool:
 
 	dia_atual += 1
 	atividades_feitas.clear()
-	pronto_para_dormir = true
 	print("Passou pro dia ", dia_atual)
 	return true
