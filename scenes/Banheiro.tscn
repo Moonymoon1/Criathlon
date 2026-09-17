@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bg4638bp75mem"]
 
 [ext_resource type="Texture2D" uid="uid://fwhgx8lhc0lo" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Mockup.png" id="1_kl2yw"]
-[ext_resource type="Texture2D" uid="uid://dngf3nqnat7pk" path="res://Sprite/Sprite-Test/pin.png" id="3_myqbf"]
+[ext_resource type="Texture2D" uid="uid://bevbw1tcje1ja" path="res://Sprite/Sprite - Minigames/icone_atencao.png" id="2_kl2yw"]
 
 [sub_resource type="GDScript" id="GDScript_bhpll"]
 script/source = "extends Node2D
@@ -59,8 +59,9 @@ position = Vector2(-10, 132)
 shape = SubResource("RectangleShape2D_tluv1")
 
 [node name="Pin" type="Sprite2D" parent="LavarRosto/AreaLavarRosto" unique_id=953719429]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_myqbf")
+position = Vector2(-7.9999995, 66.99999)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_kl2yw")
 
 [node name="EscovarDente" type="Node2D" parent="." unique_id=1089664062]
 position = Vector2(140, 34)
@@ -73,9 +74,9 @@ position = Vector2(-7.5, 193.375)
 shape = SubResource("RectangleShape2D_kl2yw")
 
 [node name="Pin" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]
-position = Vector2(0, 146.99998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_myqbf")
+position = Vector2(0, 192.99998)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_kl2yw")
 
 [node name="TomarBanho" type="Node2D" parent="." unique_id=2092504001]
 position = Vector2(108, 37)
@@ -88,9 +89,9 @@ position = Vector2(506.25, 644.125)
 shape = SubResource("RectangleShape2D_bhpll")
 
 [node name="Pin" type="Sprite2D" parent="TomarBanho/AreaTomarBanho" unique_id=601320674]
-position = Vector2(517.99994, 632.9999)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_myqbf")
+position = Vector2(516.99994, 562)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kl2yw")
 
 [node name="LavarRoupa" type="Node2D" parent="." unique_id=1938535573]
 position = Vector2(-634, 256)
@@ -104,8 +105,8 @@ shape = SubResource("RectangleShape2D_jyaeq")
 
 [node name="Pin" type="Sprite2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=1448845114]
 position = Vector2(90.99999, 341.99997)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_myqbf")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_kl2yw")
 
 [connection signal="input_event" from="LavarRosto/AreaLavarRosto" to="." method="_on_area_lavar_rosto_input_event"]
 [connection signal="input_event" from="EscovarDente/AreaEscovarDentes" to="." method="_on_area_escovar_dentes_input_event"]

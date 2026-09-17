@@ -54,3 +54,7 @@ func _input(event: InputEvent) -> void:
 
 			ultima_direcao = direcao_atual
 			posicao_inicial_x = event.position.x
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

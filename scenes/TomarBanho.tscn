@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://djoxtsy5wjtcn" path="res://Sprite/Sprite-Test/Banho.png" id="1_22eiy"]
 [ext_resource type="Script" uid="uid://dcx1uj4eacav8" path="res://scenes/tomar_banho.gd" id="2_22eiy"]
 [ext_resource type="Texture2D" uid="uid://c70env3embufh" path="res://Sprite/Sprite - Minigames/sabonete_teste.png" id="3_5fljy"]
+[ext_resource type="Texture2D" uid="uid://boyd5q6c2dlvi" path="res://Sprite/Sprite - Minigames/botoes_jogo_1.png" id="4_fn05o"]
 [ext_resource type="Texture2D" uid="uid://de8bmwuvj1333" path="res://Sprite/Sprite - Banheiro/espuma_asset.png" id="4_j01hu"]
 
 [node name="TomarBanho" type="Node2D" unique_id=1511323946]
@@ -19,12 +20,12 @@ position = Vector2(446, 719.99994)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_5fljy")
 
-[node name="BotaoVerificar" type="Button" parent="TomarBanho" unique_id=66773975]
-offset_left = 52.0
-offset_top = 209.0
-offset_right = 290.0
-offset_bottom = 279.0
-text = "ver"
+[node name="BotaoVerificar" type="Button" parent="TomarBanho" unique_id=1895870989]
+offset_top = 820.0
+offset_right = 400.0
+offset_bottom = 1089.0
+icon = ExtResource("4_fn05o")
+flat = true
 
 [node name="Manchas" type="Node2D" parent="TomarBanho" unique_id=2101839735]
 

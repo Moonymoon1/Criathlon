@@ -18,7 +18,6 @@ texture = ExtResource("2_pw63i")
 unique_name_in_owner = true
 position = Vector2(1550, 560)
 scale = Vector2(9.539092, 9.539092)
-have_energy = false
 script = null
 
 [node name="DialogUI" parent="." unique_id=1848701164 instance=ExtResource("3_7ykc4")]
