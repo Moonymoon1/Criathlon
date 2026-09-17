@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://deyg8taaqd6gp"]
+
+[ext_resource type="Texture2D" uid="uid://djoxtsy5wjtcn" path="res://Sprite/Sprite-Test/Banho.png" id="1_dc0wp"]
+[ext_resource type="Texture2D" uid="uid://2u8804ba3le8" path="res://Sprite/Sprite - Rato/ratotriste05.png" id="2_rnov5"]
+
+[node name="Creditos" type="Node2D" unique_id=1646452806]
+
+[node name="fundo" type="Sprite2D" parent="." unique_id=117001347]
+position = Vector2(965, 541)
+texture = ExtResource("1_dc0wp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=376777055]
+position = Vector2(1610, 705)
+scale = Vector2(0.37839568, 0.37839568)
+texture = ExtResource("2_rnov5")

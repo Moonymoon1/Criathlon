@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg4638bp75mem"]
 
-[ext_resource type="Texture2D" uid="uid://cve4p051l53rj" path="res://Sprite/Sprite-Test/Ratinho depressivo - Editado (1).png" id="1_sjufs"]
+[ext_resource type="Texture2D" uid="uid://fwhgx8lhc0lo" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Mockup.png" id="1_kl2yw"]
 [ext_resource type="Texture2D" uid="uid://dngf3nqnat7pk" path="res://Sprite/Sprite-Test/pin.png" id="3_myqbf"]
 
 [sub_resource type="GDScript" id="GDScript_bhpll"]
@@ -28,13 +28,13 @@ func _on_botao_quarto_pressed() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tluv1"]
-size = Vector2(234, 345)
+size = Vector2(244, 392)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl2yw"]
-size = Vector2(365, 104.5)
+size = Vector2(437, 109.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhpll"]
-size = Vector2(201, 217)
+size = Vector2(855.5, 551.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyaeq"]
 size = Vector2(241, 301)
@@ -44,9 +44,9 @@ position = Vector2(-124, -57)
 script = SubResource("GDScript_bhpll")
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=579715134]
-position = Vector2(1101, 599)
+position = Vector2(1418, 781.00006)
 scale = Vector2(0.67115504, 0.671155)
-texture = ExtResource("1_sjufs")
+texture = ExtResource("1_kl2yw")
 
 [node name="LavarRosto" type="Node2D" parent="." unique_id=1801283802]
 position = Vector2(1670, 391)
@@ -55,7 +55,7 @@ position = Vector2(1670, 391)
 position = Vector2(-1036, -73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LavarRosto/AreaLavarRosto" unique_id=713245949]
-position = Vector2(7, 44.5)
+position = Vector2(-10, 132)
 shape = SubResource("RectangleShape2D_tluv1")
 
 [node name="Pin" type="Sprite2D" parent="LavarRosto/AreaLavarRosto" unique_id=953719429]
@@ -69,7 +69,7 @@ position = Vector2(140, 34)
 position = Vector2(465, 532)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EscovarDente/AreaEscovarDentes" unique_id=2095293242]
-position = Vector2(8.5, 68.25)
+position = Vector2(-7.5, 193.375)
 shape = SubResource("RectangleShape2D_kl2yw")
 
 [node name="Pin" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]
@@ -81,14 +81,14 @@ texture = ExtResource("3_myqbf")
 position = Vector2(108, 37)
 
 [node name="AreaTomarBanho" type="Area2D" parent="TomarBanho" unique_id=972067870]
-position = Vector2(1590, 395)
+position = Vector2(1577, 404)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TomarBanho/AreaTomarBanho" unique_id=737338742]
-position = Vector2(-68, -155)
+position = Vector2(506.25, 644.125)
 shape = SubResource("RectangleShape2D_bhpll")
 
 [node name="Pin" type="Sprite2D" parent="TomarBanho/AreaTomarBanho" unique_id=601320674]
-position = Vector2(-71.99999, -165.00002)
+position = Vector2(517.99994, 632.9999)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_myqbf")
 
@@ -99,10 +99,11 @@ position = Vector2(-634, 256)
 position = Vector2(1590, 395)
 
 [node name="CollisionShape_LR" type="CollisionShape2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=567556894]
-position = Vector2(4.5, 105.5)
+position = Vector2(96, 328)
 shape = SubResource("RectangleShape2D_jyaeq")
 
 [node name="Pin" type="Sprite2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=1448845114]
+position = Vector2(90.99999, 341.99997)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_myqbf")
 

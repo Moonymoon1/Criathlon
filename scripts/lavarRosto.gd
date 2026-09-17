@@ -18,6 +18,7 @@ func _on_botao_verificar_pressed() -> void:
 		print("Ainda não dá pra lavar o rosto hoje!")
 		Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 
+
 func _on_area_lavar_rosto_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if not liberado or terminou:
 		return

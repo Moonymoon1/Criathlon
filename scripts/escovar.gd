@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var movimentos_necessarios: int = 6
+@export var movimentos_necessarios: int = 14
 @export var distancia_minima: float = 40.0
 
 @onready var escova: Node2D = $Escova

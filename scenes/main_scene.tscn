@@ -7,3 +7,4 @@
 [node name="Area2D" parent="." unique_id=126247300 instance=ExtResource("1_w2twt")]
 position = Vector2(755, 417.99997)
 scale = Vector2(5.1170397, 5.1170397)
+script = null
