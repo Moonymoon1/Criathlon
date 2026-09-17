@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_im80d"]
 [ext_resource type="Script" uid="uid://cvg62g3jujr8h" path="res://scripts/escovar.gd" id="2_k2qrr"]
-[ext_resource type="Texture2D" uid="uid://ba48t15ipjrsa" path="res://Sprite/Sprite-Test/escova-de-dente.png" id="3_k2qrr"]
-[ext_resource type="Texture2D" uid="uid://dxekksxho1on2" path="res://Sprite/Sprite-Test/—Pngtree—blue square cute soap clipart_5747858.png" id="4_8rxqu"]
+[ext_resource type="Texture2D" uid="uid://de8bmwuvj1333" path="res://Sprite/Sprite - Banheiro/espuma_asset.png" id="3_k2qrr"]
+[ext_resource type="Texture2D" uid="uid://bqi1b05mbkn4i" path="res://Sprite/Sprite - Banheiro/escova_asset.png" id="4_8rxqu"]
 
 [node name="EscovarDente" type="Node2D" unique_id=83990400]
 
@@ -16,21 +16,21 @@ movimentos_necessarios = 15
 position = Vector2(955, 541)
 texture = ExtResource("1_im80d")
 
+[node name="Espuma" type="Sprite2D" parent="Escovar" unique_id=919337289]
+position = Vector2(965, 885)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_k2qrr")
+
+[node name="Escova" type="Sprite2D" parent="Escovar" unique_id=1126400533]
+position = Vector2(1029, 848)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_8rxqu")
+
 [node name="BotaoVerificar" type="Button" parent="Escovar" unique_id=1590701420]
 offset_left = 48.0
 offset_top = 147.0
 offset_right = 458.0
 offset_bottom = 261.0
 text = "Verificar"
-
-[node name="Escova" type="Sprite2D" parent="Escovar" unique_id=1434120589]
-position = Vector2(1137, 860)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_k2qrr")
-
-[node name="Espuma" type="Sprite2D" parent="Escovar" unique_id=977352863]
-position = Vector2(961.99994, 849.99994)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_8rxqu")
 
 [connection signal="pressed" from="Escovar/BotaoVerificar" to="Escovar" method="_on_botao_verificar_pressed"]

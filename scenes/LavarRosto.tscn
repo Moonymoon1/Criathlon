@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_vhbg7"]
 [ext_resource type="Script" uid="uid://b1uwjjdh70ert" path="res://scripts/lavarRosto.gd" id="2_nlsrg"]
+[ext_resource type="Texture2D" uid="uid://bntgk2pk63pgv" path="res://Sprite/Sprite - Rato/ratotriste03.png" id="3_7tnwb"]
 [ext_resource type="Texture2D" uid="uid://dxekksxho1on2" path="res://Sprite/Sprite-Test/—Pngtree—blue square cute soap clipart_5747858.png" id="3_nlsrg"]
 
 [node name="LavarRosto" type="Node2D" unique_id=665535272]
@@ -12,6 +13,11 @@ texture = ExtResource("1_vhbg7")
 
 [node name="GameLavarRosto" type="Node2D" parent="." unique_id=212559247]
 script = ExtResource("2_nlsrg")
+
+[node name="Rosto" type="Sprite2D" parent="GameLavarRosto" unique_id=28928918]
+position = Vector2(926, 588)
+scale = Vector2(0.5110803, 0.4974372)
+texture = ExtResource("3_7tnwb")
 
 [node name="BotaoVerificar" type="Button" parent="GameLavarRosto" unique_id=904465455]
 offset_left = 61.0
@@ -24,7 +30,5 @@ text = "Verificar"
 position = Vector2(972.00006, 806)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_nlsrg")
-
-[node name="Rosto" type="Sprite2D" parent="GameLavarRosto" unique_id=28928918]
 
 [connection signal="pressed" from="GameLavarRosto/BotaoVerificar" to="GameLavarRosto" method="_on_botao_verificar_pressed"]
