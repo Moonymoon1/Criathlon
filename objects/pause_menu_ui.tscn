@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://ctmkat1dbxfgw"]
+
+[ext_resource type="PackedScene" uid="uid://cdsdj5m8yipop" path="res://objects/button_template.tscn" id="1_hi1w7"]
+[ext_resource type="Script" uid="uid://cb6qf0sqnb7p1" path="res://scripts/pause_menu_ui.gd" id="1_q33t8"]
+
+[node name="pause_menu_UI" type="Control" unique_id=1967004213]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q33t8")
+
+[node name="pause_menu" type="VBoxContainer" parent="." unique_id=534213360]
+unique_name_in_owner = true
+process_mode = 4
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -68.5
+offset_right = 201.5
+offset_bottom = 351.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="continue" parent="pause_menu" unique_id=11209475 node_paths=PackedStringArray("close_menu") instance=ExtResource("1_hi1w7")]
+layout_mode = 2
+text = "Continuar"
+close_menu = NodePath("..")
+
+[node name="options" parent="pause_menu" unique_id=101723349 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("1_hi1w7")]
+layout_mode = 2
+text = "Opções"
+open_menu = NodePath("../../options_menu")
+close_menu = NodePath("..")
+
+[node name="go_to_menu" parent="pause_menu" unique_id=1495091647 node_paths=PackedStringArray("close_menu") instance=ExtResource("1_hi1w7")]
+layout_mode = 2
+text = "Voltar para o menu"
+close_menu = NodePath("..")
+unpause = true
+change_scene = "uid://ibgatj1cr2yf"
+
+[node name="options_menu" type="VBoxContainer" parent="." unique_id=292852467]
+process_mode = 4
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.5
+offset_top = -235.0
+offset_right = 153.5
+offset_bottom = 385.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="volume_options_label" type="Label" parent="options_menu" unique_id=163178072]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_font_sizes/font_size = 52
+text = "Opções de 
+volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="msc_volume_label" type="Label" parent="options_menu" unique_id=1079925823]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_font_sizes/font_size = 42
+text = "Música"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="msc_volume_slider" type="HSlider" parent="options_menu" unique_id=981836569]
+layout_mode = 2
+
+[node name="sfx_volume_label" type="Label" parent="options_menu" unique_id=316503154]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_font_sizes/font_size = 42
+text = "Efeitos sonoros"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_volume_slider" type="HSlider" parent="options_menu" unique_id=97737935]
+layout_mode = 2
+
+[node name="back" parent="options_menu" unique_id=2114838157 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("1_hi1w7")]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+text = "Back"
+open_menu = NodePath("../../pause_menu")
+close_menu = NodePath("..")

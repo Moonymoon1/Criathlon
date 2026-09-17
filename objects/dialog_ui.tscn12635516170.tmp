@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cs4emdanr2rer"]
+
+[ext_resource type="Theme" uid="uid://by2ulubj37gwr" path="res://objects/new_theme.tres" id="1_pyhkh"]
+[ext_resource type="Script" uid="uid://ck5i25fnqmpj8" path="res://objects/dialog_ui.gd" id="1_wgc3o"]
+
+[node name="DialogUI" type="Control" unique_id=1848701164]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wgc3o")
+
+[node name="dialog_box" type="PanelContainer" parent="." unique_id=1125412501]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -35.0
+offset_right = 400.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pyhkh")
+
+[node name="dialog" type="RichTextLabel" parent="dialog_box" unique_id=251234274]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Eu não consigo fazer isso agora... vou deixar pra depois [shake]chora refri pra caralho e explode[/shake] tristemente feliz."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="audio_stream" type="AudioStreamPlayer2D" parent="." unique_id=1967136840]
+unique_name_in_owner = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1246979407]
+unique_name_in_owner = true
+wait_time = 0.09
