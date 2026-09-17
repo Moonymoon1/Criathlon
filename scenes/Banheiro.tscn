@@ -51,7 +51,7 @@ func _on_area_lavar_roupa_input_event(viewport: Node, event: InputEvent, shape_i
 size = Vector2(244, 392)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl2yw"]
-size = Vector2(365, 104.5)
+size = Vector2(437, 109.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhpll"]
 size = Vector2(855.5, 551.75)
@@ -89,7 +89,7 @@ position = Vector2(140, 34)
 position = Vector2(465, 532)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EscovarDente/AreaEscovarDentes" unique_id=2095293242]
-position = Vector2(-7, 191)
+position = Vector2(-7.5, 193.375)
 shape = SubResource("RectangleShape2D_kl2yw")
 
 [node name="Pin" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]

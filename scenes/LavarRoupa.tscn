@@ -1,32 +1,87 @@
 [gd_scene format=3 uid="uid://bojbn6p21n21y"]
 
-[ext_resource type="Texture2D" uid="uid://ds3pmm2cbs7tg" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Background_SJanela.png" id="1_01b3v"]
+[ext_resource type="Texture2D" uid="uid://fwhgx8lhc0lo" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Mockup.png" id="1_y1lcn"]
 [ext_resource type="Texture2D" uid="uid://cn3h454q5h0i8" path="res://Sprite/Sprite - Banheiro/SETEMBRO_CestoDeRoupa.png" id="2_m2b4c"]
 [ext_resource type="Script" uid="uid://ctk1sdxjub74i" path="res://scripts/RoupaSuja.gd" id="2_y1lcn"]
-[ext_resource type="Texture2D" uid="uid://d1q6ql4n3kvb3" path="res://Sprite/Sprite-Test/lacreatura.png" id="4_7sjgo"]
+[ext_resource type="Texture2D" uid="uid://ctwerlwkttr84" path="res://Sprite/Sprite - Minigames/roupa_suja_solto.png" id="3_7sjgo"]
 [ext_resource type="Texture2D" uid="uid://dmel4bw70c6mk" path="res://Sprite/Sprite - Minigames/roupa_suja_base.png" id="5_3godn"]
+[ext_resource type="FontFile" uid="uid://dlct7e7lgcj5l" path="res://Sprite/Srites - Certos/Comicks.otf" id="6_7sjgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyaeq"]
+size = Vector2(280, 262)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qt71a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1lcn"]
+size = Vector2(280, 262)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sjgo"]
+size = Vector2(280, 262)
 
 [node name="LavarRoupa" type="Node2D" unique_id=1247462825]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=660003149]
 position = Vector2(1341.5, 834.75)
 scale = Vector2(0.6934896, 0.7696759)
-texture = ExtResource("1_01b3v")
+texture = ExtResource("1_y1lcn")
 
 [node name="Node" type="Node" parent="." unique_id=1915204534]
 script = ExtResource("2_y1lcn")
 
+[node name="Area2D_Sujeira1" type="Area2D" parent="Node" unique_id=952504436]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D_Sujeira1" unique_id=1616476570]
+position = Vector2(1372, 961)
+shape = SubResource("RectangleShape2D_jyaeq")
+
+[node name="Roupa" type="Sprite2D" parent="Node/Area2D_Sujeira1" unique_id=1407078607]
+material = SubResource("CanvasItemMaterial_qt71a")
+position = Vector2(1382, 943)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_7sjgo")
+
+[node name="Area2D_Sujeira2" type="Area2D" parent="Node" unique_id=592879351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D_Sujeira2" unique_id=245786476]
+position = Vector2(1771, 1415)
+shape = SubResource("RectangleShape2D_y1lcn")
+
+[node name="Roupa" type="Sprite2D" parent="Node/Area2D_Sujeira2" unique_id=484855417]
+material = SubResource("CanvasItemMaterial_qt71a")
+position = Vector2(1774, 1417.9999)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_7sjgo")
+
+[node name="Area2D_Sujeira3" type="Area2D" parent="Node" unique_id=51362485]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D_Sujeira3" unique_id=627731645]
+position = Vector2(524, 1153)
+shape = SubResource("RectangleShape2D_7sjgo")
+
+[node name="Roupa" type="Sprite2D" parent="Node/Area2D_Sujeira3" unique_id=1744738599]
+material = SubResource("CanvasItemMaterial_qt71a")
+position = Vector2(526, 1114)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_7sjgo")
+
 [node name="Cesto" type="Sprite2D" parent="Node" unique_id=390650414]
-position = Vector2(1272, 1564)
+visible = false
+position = Vector2(-544, 1124)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_m2b4c")
 region_enabled = true
 region_rect = Rect2(459.84814, 1124.4275, 461.4734, 505.95142)
 
-[node name="Roupa" type="Sprite2D" parent="Node" unique_id=1407078607]
-position = Vector2(1303, -142)
-texture = ExtResource("4_7sjgo")
-
 [node name="SpriteBarra" type="Sprite2D" parent="Node" unique_id=1149799300]
-position = Vector2(472, 1533)
+position = Vector2(470, 1518)
 texture = ExtResource("5_3godn")
+
+[node name="Button" type="Button" parent="Node" unique_id=1958471788]
+custom_minimum_size = Vector2(500, 100)
+offset_left = 41.0
+offset_top = 28.0
+offset_right = 207.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("6_7sjgo")
+theme_override_font_sizes/font_size = 46
+text = "Separe a Roupa Suja"
