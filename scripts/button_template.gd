@@ -5,8 +5,8 @@ extends Button
 
 @export_file("*.tscn") var change_scene: String
 
-@onready var forward_sfx = preload("res://imports/audio/sfx/text_blip.wav")
-@onready var backward_sfx = preload("res://imports/audio/sfx/text_blip.wav")
+@onready var forward_sfx = preload("res://imports/audio/sfx/SFXmouse-foward(1).wav")
+@onready var backward_sfx = preload("res://imports/audio/sfx/SFXmouse-back(1).wav")
 
 @export_group("bools")
 @export var unpause: bool
@@ -17,9 +17,9 @@ func _on_pressed() -> void:
 		get_tree().paused = false
 	
 	if forward:
-		AudioManager.play_one_shot(forward_sfx)
+		AudioManager.play_one_shot(forward_sfx, 20)
 	else:
-		AudioManager.play_one_shot(backward_sfx)
+		AudioManager.play_one_shot(backward_sfx, 20)
 	
 	if open_menu != null:
 		open_menu.process_mode = Node.PROCESS_MODE_INHERIT
