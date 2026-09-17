@@ -1,14 +1,12 @@
 extends Node2D
 
-@export var distancia_necessaria: float = 400
-@export var puxadas_necessarias: int = 2
+@export var distancia_necessaria: float = 600
 
 @onready var bolinha: Area2D = $AreaLavarRosto
 @onready var botao_verificar: Button = $BotaoVerificar
 
 var arrastando: bool = false
 var posicao_inicial: Vector2
-var contador: int = 0
 var terminou: bool = false
 var liberado: bool = false
 
@@ -17,7 +15,7 @@ func _on_botao_verificar_pressed() -> void:
 		liberado = true
 		botao_verificar.visible = false
 	else:
-		print("Ainda não dá pra lavar o rosto hoje!")
+		print("Não dá pra lavar o rosto")
 		Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 
 func _on_area_lavar_rosto_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -41,16 +39,10 @@ func _input(event: InputEvent) -> void:
 
 		if y_alvo >= posicao_inicial.y + distancia_necessaria:
 			arrastando = false
-			contador += 1
-			print("Puxadas: ", contador, "/", puxadas_necessarias)
-
-			if contador >= puxadas_necessarias:
-				terminou = true
-				print("Rosto lavado!")
-				var avancou_dia: bool = GameState.completar("lavar_rosto")
-				if avancou_dia:
-					Transicao.trocar_cena("res://scenes/Quarto.tscn")
-				else:
-					Transicao.trocar_cena("res://scenes/Banheiro.tscn")
+			terminou = true
+			print("Rosto lavado")
+			var avancou_dia: bool = GameState.completar("lavar_rosto")
+			if avancou_dia:
+				Transicao.trocar_cena("res://scenes/Quarto.tscn")
 			else:
-				bolinha.global_position = posicao_inicial
+				Transicao.trocar_cena("res://scenes/Banheiro.tscn")

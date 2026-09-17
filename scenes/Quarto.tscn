@@ -42,4 +42,4 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_24xt2")
 
 [connection signal="input_event" from="Quarto/AreaCama" to="Quarto" method="_on_area_cama_input_event"]
-[connection signal="input_event" from="Quarto/AreaBanheiro" to="Quarto" method="_on_area_cama_input_event"]
+[connection signal="input_event" from="Quarto/AreaBanheiro" to="Quarto" method="_on_area_banheiro_input_event"]

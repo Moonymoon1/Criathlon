@@ -11,7 +11,7 @@ var contador_direito: int = 0
 var esperando: int = MOUSE_BUTTON_LEFT
 var aguardando_confirmacao: bool = false
 var terminou: bool = false
-var liberado: bool = false   
+var liberado: bool = false
 
 func _ready() -> void:
 	_atualizar_sprite()
@@ -19,10 +19,10 @@ func _ready() -> void:
 func _on_botao_verificar_pressed() -> void:
 	if GameState.pode_fazer("escovar_dente"):
 		liberado = true
-		botao_verificar.visible = false   
+		botao_verificar.visible = false
 	else:
-		print("Ainda não dá pra escovar o dente hoje!")
-		get_tree().change_scene_to_file("res://scenes/Banheiro.tscn")
+		print("Não dá pra escovar o dente")
+		Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 
 func _input(event: InputEvent) -> void:
 	if not liberado or terminou:
@@ -31,9 +31,12 @@ func _input(event: InputEvent) -> void:
 	if aguardando_confirmacao:
 		if event is InputEventMouseButton and event.pressed:
 			terminou = true
-			print("Dente escovado!")
-			GameState.completar("escovar_dente")
-			get_tree().change_scene_to_file("res://scenes/Banheiro.tscn")
+			print("Dente escovado")
+			var avancou_dia: bool = GameState.completar("escovar_dente")
+			if avancou_dia:
+				Transicao.trocar_cena("res://scenes/Quarto.tscn")
+			else:
+				Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 		return
 
 	if event is InputEventMouseButton and event.pressed and event.button_index == esperando:

@@ -1,10 +1,8 @@
 extends Node
 
-# Autoload "GameState" — guarda o dia atual e quais atividades já foram feitas nesse dia.
-
 var dia_atual: int = 1
 var atividades_feitas: Dictionary = {}
-var pronto_para_dormir: bool = false   # true quando já fez tudo que precisava hoje
+var pronto_para_dormir: bool = false
 
 func completar(atividade: String) -> bool:
 	atividades_feitas[atividade] = true
