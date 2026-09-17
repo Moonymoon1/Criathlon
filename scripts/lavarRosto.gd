@@ -18,7 +18,7 @@ func _on_botao_verificar_pressed() -> void:
 		botao_verificar.visible = false
 	else:
 		print("Ainda não dá pra lavar o rosto hoje!")
-		get_tree().change_scene_to_file("res://scenes/Banheiro.tscn")
+		Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 
 func _on_area_lavar_rosto_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if not liberado or terminou:
@@ -47,7 +47,10 @@ func _input(event: InputEvent) -> void:
 			if contador >= puxadas_necessarias:
 				terminou = true
 				print("Rosto lavado!")
-				GameState.completar("lavar_rosto")
-				get_tree().change_scene_to_file("res://scenes/Banheiro.tscn")
+				var avancou_dia: bool = GameState.completar("lavar_rosto")
+				if avancou_dia:
+					Transicao.trocar_cena("res://scenes/Quarto.tscn")
+				else:
+					Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 			else:
 				bolinha.global_position = posicao_inicial

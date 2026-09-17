@@ -21,6 +21,10 @@ func _on_area_lavar_rosto_input_event(viewport: Node, event: InputEvent, shape_i
 func _on_area_lavar_roupa_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		get_tree().change_scene_to_file(\"res://scenes/LavarRoupa.tscn\")
+
+
+func _on_botao_quarto_pressed() -> void:
+	pass # Replace with function body.
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tluv1"]
@@ -101,7 +105,15 @@ shape = SubResource("RectangleShape2D_jyaeq")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_myqbf")
 
+[node name="BotaoQuarto" type="Button" parent="." unique_id=1779536290]
+offset_left = 186.0
+offset_top = 993.0
+offset_right = 436.0
+offset_bottom = 1093.0
+text = "Voltar quarto"
+
 [connection signal="input_event" from="LavarRosto/AreaLavarRosto" to="." method="_on_area_lavar_rosto_input_event"]
 [connection signal="input_event" from="EscovarDente/AreaEscovarDentes" to="." method="_on_area_escovar_dentes_input_event"]
 [connection signal="input_event" from="TomarBanho/AreaTomarBanho" to="." method="_on_area_tomar_banho_input_event"]
 [connection signal="input_event" from="LavarRoupa/AreaLavarRoupa" to="." method="_on_area_lavar_roupa_input_event"]
+[connection signal="pressed" from="BotaoQuarto" to="." method="_on_botao_quarto_pressed"]

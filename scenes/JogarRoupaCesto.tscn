@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bojbn6p21n21y"]
 
 [ext_resource type="Texture2D" uid="uid://ch7dkb84um3mc" path="res://Sprite/Sprite-Test/Test Espelho.png" id="1_d48h0"]
-[ext_resource type="Script" uid="uid://bsw2y63e4hrki" path="res://scenes/jogar_roupa.gd" id="2_apdqi"]
+[ext_resource type="Script" uid="uid://bsw2y63e4hrki" path="res://scripts/jogar_roupa.gd" id="2_apdqi"]
 
 [node name="JogarRoupaCesto" type="Node2D" unique_id=1247462825]
 

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*uid://cw57v3pufkwlh"
+Transicao="*uid://bggwk4f2tk54k"
 
 [display]
 

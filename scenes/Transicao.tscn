@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bggwk4f2tk54k"]
+
+[ext_resource type="Script" uid="uid://d10sl0swm08ul" path="res://scripts/transicao.gd" id="1_hdnnu"]
+
+[node name="Transicao" type="CanvasLayer" unique_id=991146535]
+script = ExtResource("1_hdnnu")
+
+[node name="Fade" type="ColorRect" parent="." unique_id=1574907797]
+offset_left = -41.0
+offset_top = -31.0
+offset_right = 1959.0
+offset_bottom = 1169.0
+color = Color(0, 0, 0, 1)

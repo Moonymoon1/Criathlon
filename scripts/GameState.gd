@@ -3,19 +3,20 @@ extends Node
 # Autoload "GameState" — guarda o dia atual e quais atividades já foram feitas nesse dia.
 
 var dia_atual: int = 1
-var atividades_feitas: Dictionary = {}   # ex: {"lavar_rosto": true}
+var atividades_feitas: Dictionary = {}
+var pronto_para_dormir: bool = false   # true quando já fez tudo que precisava hoje
 
-func completar(atividade: String) -> void:
+func completar(atividade: String) -> bool:
 	atividades_feitas[atividade] = true
 	print(atividade, " concluído!")
-	_verificar_avanco()
+	return _verificar_avanco()
 
 func pode_fazer(atividade: String) -> bool:
 	var necessarias: Array = _atividades_do_dia(dia_atual)
 	if atividade not in necessarias:
-		return false   # não é uma atividade do dia de hoje
+		return false
 	if atividades_feitas.get(atividade, false):
-		return false   # já foi feita hoje
+		return false
 	return true
 
 func _atividades_do_dia(dia: int) -> Array:
@@ -29,15 +30,15 @@ func _atividades_do_dia(dia: int) -> Array:
 		_:
 			return ["lavar_rosto", "escovar_dente", "tomar_banho", "lavar_roupa"]
 
-func _verificar_avanco() -> void:
+func _verificar_avanco() -> bool:
 	var necessarias: Array = _atividades_do_dia(dia_atual)
 
 	for atividade in necessarias:
 		if not atividades_feitas.get(atividade, false):
-			print("Ainda falta: ", atividade)  # debug temporário
-			return   # ainda falta alguma coisa hoje, não avança
+			return false
 
-	# Completou tudo que era necessário nesse dia
 	dia_atual += 1
 	atividades_feitas.clear()
+	pronto_para_dormir = true
 	print("Passou pro dia ", dia_atual)
+	return true
