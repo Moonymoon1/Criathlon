@@ -1,9 +1,12 @@
 extends Control
 
 @onready var pause_menu = %pause_menu
+@onready var main_scene = $".."
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
+	#print(get_tree().paused)
+	
 	if (Input.is_action_just_pressed("escape") 
 	and get_tree().paused == false):
 		get_tree().paused = true

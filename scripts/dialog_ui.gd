@@ -1,8 +1,7 @@
 extends Control
 
 @onready var dialog = %dialog
-@onready var audio_stream = %audio_stream
-@onready var txt_sfx : AudioStream = preload("res://imports/audio/sfx/aa.wav")
+@export var txt_sfx: AudioStream
 @onready var text_blip_timer = %Timer
 @onready var dialog_box = %dialog_box
 var dialog_box_size: Vector2
@@ -24,7 +23,7 @@ var current_visible_characters : int = 0
 
 func _ready() -> void:
 	text_blip_timer.timeout.connect(_on_text_blip_timeout)
-	audio_stream.stream = txt_sfx
+
 	current_animation_speed = HIGH_ANIMATION_SPEED
 	if current_animation_speed == LOW_ANIMATION_SPEED:
 		text_blip_timer.wait_time = LOW_BLIP_TIMER
@@ -62,4 +61,4 @@ func skip_text_animation():
 	dialog.visible_ratio = 1
 
 func _on_text_blip_timeout():
-	audio_stream.play()
+	AudioManager.play_one_shot(txt_sfx, 0, 0)

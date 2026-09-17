@@ -35,19 +35,22 @@ theme_override_constants/separation = 30
 layout_mode = 2
 text = "Continuar"
 close_menu = NodePath("..")
+unpause = true
+forward = true
 
 [node name="options" parent="pause_menu" unique_id=101723349 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("1_hi1w7")]
 layout_mode = 2
 text = "Opções"
 open_menu = NodePath("../../options_menu")
 close_menu = NodePath("..")
+forward = true
 
 [node name="go_to_menu" parent="pause_menu" unique_id=1495091647 node_paths=PackedStringArray("close_menu") instance=ExtResource("1_hi1w7")]
 layout_mode = 2
 text = "Voltar para o menu"
 close_menu = NodePath("..")
-unpause = true
 change_scene = "uid://ibgatj1cr2yf"
+unpause = true
 
 [node name="options_menu" type="VBoxContainer" parent="." unique_id=292852467]
 process_mode = 4
