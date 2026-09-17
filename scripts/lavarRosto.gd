@@ -8,6 +8,7 @@ var arrastando: bool = false
 var posicao_inicial: Vector2
 var terminou: bool = false
 
+
 func _on_area_lavar_rosto_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if terminou:
 		return

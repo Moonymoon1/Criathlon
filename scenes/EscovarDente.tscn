@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ddnpavwc67a6x" path="res://Sprite/Srites - Certos/escova_base_4de_6.png" id="5_vucf0"]
 [ext_resource type="Texture2D" uid="uid://bl5u4ooiceqv3" path="res://Sprite/Srites - Certos/escova_base_5de_6.png" id="6_lhibs"]
 [ext_resource type="Texture2D" uid="uid://xcdubdrfso6n" path="res://Sprite/Srites - Certos/escova_base_6de_6.png" id="7_t7tqh"]
+[ext_resource type="Texture2D" uid="uid://d1q6ql4n3kvb3" path="res://Sprite/Sprite-Test/lacreatura.png" id="10_vucf0"]
 
 [node name="EscovarDente" type="Node2D" unique_id=83990400]
 
@@ -24,3 +25,9 @@ texture = ExtResource("1_im80d")
 position = Vector2(320, 980)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_g065s")
+
+[node name="SpriteSujeira" type="Sprite2D" parent="Escovar" unique_id=698835335]
+visible = false
+position = Vector2(825, 831)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_vucf0")

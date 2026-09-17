@@ -1,3 +1,32 @@
 [gd_scene format=3 uid="uid://bojbn6p21n21y"]
 
+[ext_resource type="Texture2D" uid="uid://ds3pmm2cbs7tg" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Background_SJanela.png" id="1_01b3v"]
+[ext_resource type="Texture2D" uid="uid://cn3h454q5h0i8" path="res://Sprite/Sprite - Banheiro/SETEMBRO_CestoDeRoupa.png" id="2_m2b4c"]
+[ext_resource type="Script" uid="uid://ctk1sdxjub74i" path="res://scripts/RoupaSuja.gd" id="2_y1lcn"]
+[ext_resource type="Texture2D" uid="uid://d1q6ql4n3kvb3" path="res://Sprite/Sprite-Test/lacreatura.png" id="4_7sjgo"]
+[ext_resource type="Texture2D" uid="uid://dmel4bw70c6mk" path="res://Sprite/Sprite - Minigames/roupa_suja_base.png" id="5_3godn"]
+
 [node name="LavarRoupa" type="Node2D" unique_id=1247462825]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=660003149]
+position = Vector2(1341.5, 834.75)
+scale = Vector2(0.6934896, 0.7696759)
+texture = ExtResource("1_01b3v")
+
+[node name="Node" type="Node" parent="." unique_id=1915204534]
+script = ExtResource("2_y1lcn")
+
+[node name="Cesto" type="Sprite2D" parent="Node" unique_id=390650414]
+position = Vector2(1272, 1564)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_m2b4c")
+region_enabled = true
+region_rect = Rect2(459.84814, 1124.4275, 461.4734, 505.95142)
+
+[node name="Roupa" type="Sprite2D" parent="Node" unique_id=1407078607]
+position = Vector2(1303, -142)
+texture = ExtResource("4_7sjgo")
+
+[node name="SpriteBarra" type="Sprite2D" parent="Node" unique_id=1149799300]
+position = Vector2(472, 1533)
+texture = ExtResource("5_3godn")
