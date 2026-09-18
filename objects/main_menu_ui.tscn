@@ -42,6 +42,7 @@ flat = true
 icon_alignment = 1
 open_menu = NodePath("../../play_menu")
 close_menu = NodePath("..")
+forward = true
 
 [node name="play_menu" type="VBoxContainer" parent="." unique_id=1461140651]
 process_mode = 4
@@ -74,6 +75,7 @@ flat = true
 icon_alignment = 1
 close_menu = NodePath("..")
 change_scene = "uid://b5ja67y4g01t2"
+forward = true
 
 [node name="options" parent="play_menu" unique_id=1794426173 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("2_1pij0")]
 layout_mode = 2
@@ -88,6 +90,7 @@ flat = true
 icon_alignment = 1
 open_menu = NodePath("../../options_menu")
 close_menu = NodePath("..")
+forward = true
 
 [node name="back" parent="play_menu" unique_id=243169266 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("2_1pij0")]
 layout_mode = 2

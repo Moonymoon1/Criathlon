@@ -19,6 +19,7 @@ func _ready() -> void:
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
+	print(is_interactable)
 	_show_text()
 	if Input.is_action_just_pressed("ui_accept"):
 		task_done = true
@@ -62,10 +63,10 @@ func start_dialog_ui(txt):
 	is_interactable = false
 
 func _on_mouse_entered() -> void:
-	if dialog_ui.visible == false:
-		is_interactable = true
+	#if dialog_ui.visible == false:
+	is_interactable = true
 	
 
 func _on_mouse_exited() -> void:
-	if dialog_ui.visible == false:
-		is_interactable = false
+	#if dialog_ui.visible == false:
+	is_interactable = false

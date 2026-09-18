@@ -4,6 +4,7 @@ extends Control
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
+	print(get_tree().paused)
 	if (Input.is_action_just_pressed("escape") 
 	and get_tree().paused == false):
 		get_tree().paused = true

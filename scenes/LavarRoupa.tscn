@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bojbn6p21n21y"]
+[gd_scene format=3 uid="uid://bdk1b7c16tvkc"]
 
 [ext_resource type="Texture2D" uid="uid://fwhgx8lhc0lo" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Mockup.png" id="1_y1lcn"]
 [ext_resource type="Script" uid="uid://ctk1sdxjub74i" path="res://scripts/RoupaSuja.gd" id="2_y1lcn"]
