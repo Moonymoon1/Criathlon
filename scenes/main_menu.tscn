@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://ibgatj1cr2yf"]
 
+[ext_resource type="Texture2D" uid="uid://b4uu3ew147d2v" path="res://Sprite/ratofelizfinal.jpg" id="1_ekxnf"]
 [ext_resource type="PackedScene" uid="uid://7cgptik2v5bh" path="res://objects/main_menu_ui.tscn" id="1_l6cm7"]
 
 [node name="main_menu" type="Node2D" unique_id=1950527030]
 modulate = Color(1, 0.8784314, 0.6039216, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2045469560]
+position = Vector2(970, 546)
+texture = ExtResource("1_ekxnf")
 
 [node name="main_menu_UI" parent="." unique_id=1789508741 instance=ExtResource("1_l6cm7")]
 offset_right = 1920.0
