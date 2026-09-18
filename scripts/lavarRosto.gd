@@ -52,7 +52,9 @@ func _input(event: InputEvent) -> void:
 			terminou = true
 			print("Rosto lavado!")
 			var avancou_dia: bool = GameState.completar("lavar_rosto")
-			if avancou_dia:
+			if avancou_dia and GameState.jogo_terminou():
+				Transicao.trocar_cena("res://scenes/main_menu.tscn")
+			elif avancou_dia:
 				Transicao.trocar_cena_com_passagem_de_dia("res://scenes/Banheiro.tscn")
 			else:
 				Transicao.trocar_cena("res://scenes/Banheiro.tscn")

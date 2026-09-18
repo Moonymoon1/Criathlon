@@ -1,5 +1,7 @@
 extends Node
 
+const DIA_FINAL: int = 4
+
 var dia_atual: int = 1
 var atividades_feitas: Dictionary = {}
 
@@ -7,6 +9,9 @@ func completar(atividade: String) -> bool:
 	atividades_feitas[atividade] = true
 	print(atividade, " concluído!")
 	return _verificar_avanco()
+
+func jogo_terminou() -> bool:
+	return dia_atual - 1 >= DIA_FINAL
 
 func pode_fazer(atividade: String) -> bool:
 	var necessarias: Array = _atividades_do_dia(dia_atual)
@@ -22,8 +27,6 @@ func _atividades_do_dia(dia: int) -> Array:
 			return ["lavar_rosto"]
 		2:
 			return ["lavar_rosto", "escovar_dente"]
-		3:
-			return ["lavar_rosto", "escovar_dente", "tomar_banho"]
 		_:
 			return ["lavar_rosto", "escovar_dente", "tomar_banho", "lavar_roupa"]
 
