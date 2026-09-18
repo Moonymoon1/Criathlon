@@ -23,7 +23,7 @@ func _on_botao_verificar_pressed() -> void:
 		liberado = true
 		botao_verificar.visible = false
 	else:
-		print("Nem consigo me olhar no espelho hoje...")
+		print("Ainda não dá pra lavar o rosto hoje!")
 		Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 
 func _input(event: InputEvent) -> void:
@@ -51,5 +51,8 @@ func _input(event: InputEvent) -> void:
 		if progresso >= 1.0:
 			terminou = true
 			print("Rosto lavado!")
-			GameState.completar("lavar_rosto")
-			Transicao.trocar_cena("res://scenes/Banheiro.tscn")
+			var avancou_dia: bool = GameState.completar("lavar_rosto")
+			if avancou_dia:
+				Transicao.trocar_cena_com_passagem_de_dia("res://scenes/Banheiro.tscn")
+			else:
+				Transicao.trocar_cena("res://scenes/Banheiro.tscn")

@@ -6,8 +6,16 @@
 script = ExtResource("1_hdnnu")
 
 [node name="Fade" type="ColorRect" parent="." unique_id=1574907797]
-offset_left = -41.0
-offset_top = -31.0
-offset_right = 1959.0
-offset_bottom = 1169.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Video" type="VideoStreamPlayer" parent="." unique_id=1742167182]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

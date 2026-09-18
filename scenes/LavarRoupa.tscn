@@ -48,14 +48,13 @@ position = Vector2(1158, 656.00006)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_y1lcn")
 
-[node name="Node" type="Node" parent="." unique_id=1915204534]
-
-[node name="BotaoVerificar" type="Button" parent="Node" unique_id=1958471788]
+[node name="BotaoVerificar" type="Button" parent="." unique_id=1958471788]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 100)
-offset_left = -42.0
-offset_top = -36.0
-offset_right = 458.0
-offset_bottom = 233.0
+offset_left = -50.2994
+offset_top = -43.113773
+offset_right = 449.7006
+offset_bottom = 225.88623
 theme_override_fonts/font = ExtResource("6_7sjgo")
 theme_override_font_sizes/font_size = 42
 text = "Preciso separar
@@ -64,6 +63,8 @@ icon = ExtResource("5_y1lcn")
 flat = true
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Node" type="Node" parent="." unique_id=1915204534]
 
 [node name="Area2D_Sujeira1" type="Area2D" parent="Node" unique_id=952504436]
 position = Vector2(-358, -301)
@@ -141,6 +142,6 @@ position = Vector2(526, 1114)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_7sjgo")
 
-[connection signal="pressed" from="Node/BotaoVerificar" to="Node/Area2D_Sujeira1" method="_on_button_pressed"]
+[connection signal="pressed" from="BotaoVerificar" to="Node/Area2D_Sujeira1" method="_on_botao_verificar_pressed"]
 [connection signal="mouse_entered" from="Node/Area2D_Sujeira1" to="Node/Area2D_Sujeira1" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Node/Area2D_Sujeira2" to="Node/Area2D_Sujeira1" method="_on_area_2d_sujeira_2_mouse_entered"]

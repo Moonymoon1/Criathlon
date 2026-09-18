@@ -59,9 +59,8 @@ func _verificar_fim() -> void:
 
 	terminou = true
 	print("Banho concluído!")
-	GameState.completar("tomar_banho")
-	Transicao.trocar_cena("res://scenes/Banheiro.tscn")
-
-
-func _on_verificar_pressed() -> void:
-	pass # Replace with function body.
+	var avancou_dia: bool = GameState.completar("tomar_banho")
+	if avancou_dia:
+		Transicao.trocar_cena_com_passagem_de_dia("res://scenes/Banheiro.tscn")
+	else:
+		Transicao.trocar_cena("res://scenes/Banheiro.tscn")
