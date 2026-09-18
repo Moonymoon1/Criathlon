@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://j2f0ijvoalvg"]
+[gd_scene format=3 uid="uid://b5ja67y4g01t2"]
 
 [ext_resource type="Script" uid="uid://b1rsc0e40ebpb" path="res://scripts/main_scene.gd" id="1_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://bi5bfb3grxy0u" path="res://objects/interactable.tscn" id="1_w2twt"]
@@ -18,10 +18,14 @@ texture = ExtResource("2_pw63i")
 unique_name_in_owner = true
 position = Vector2(1550, 560)
 scale = Vector2(9.539092, 9.539092)
-script = null
+have_energy = false
+failed_task_txt = ""
+succeded_task_txt = ""
+already_done_task_txt = ""
 
 [node name="DialogUI" parent="." unique_id=1848701164 instance=ExtResource("3_7ykc4")]
 unique_name_in_owner = true
+visible = false
 offset_left = 1017.0
 offset_top = 864.0
 offset_right = 1017.0
