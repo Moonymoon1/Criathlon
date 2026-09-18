@@ -1,47 +1,104 @@
 [gd_scene format=3 uid="uid://tc46u77lr5l5"]
 
-[ext_resource type="Texture2D" uid="uid://djoxtsy5wjtcn" path="res://Sprite/Sprite-Test/Banho.png" id="1_22eiy"]
+[ext_resource type="Texture2D" uid="uid://ds3pmm2cbs7tg" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Background_SJanela.png" id="1_dyl7y"]
 [ext_resource type="Script" uid="uid://dcx1uj4eacav8" path="res://scenes/tomar_banho.gd" id="2_22eiy"]
+[ext_resource type="Texture2D" uid="uid://dv2g44qyyvjot" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Quadro_Feliz (1).png" id="2_vxesr"]
 [ext_resource type="Texture2D" uid="uid://c70env3embufh" path="res://Sprite/Sprite - Minigames/sabonete_teste.png" id="3_5fljy"]
-[ext_resource type="Texture2D" uid="uid://boyd5q6c2dlvi" path="res://Sprite/Sprite - Minigames/botoes_jogo_1.png" id="4_fn05o"]
-[ext_resource type="Texture2D" uid="uid://de8bmwuvj1333" path="res://Sprite/Sprite - Banheiro/espuma_asset.png" id="4_j01hu"]
+[ext_resource type="Texture2D" uid="uid://sjs4yofiahlj" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Janela.png" id="3_ysppp"]
+[ext_resource type="Texture2D" uid="uid://2bo8l0nj6ytt" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Privada.png" id="4_wcjwq"]
+[ext_resource type="Texture2D" uid="uid://dwhkyw8aguoa" path="res://Sprite/Sprite - Banheiro/banheira_fundo.png" id="5_sctfi"]
+[ext_resource type="FontFile" uid="uid://dlct7e7lgcj5l" path="res://Sprite/Srites - Certos/Comicks.otf" id="5_vxesr"]
+[ext_resource type="Texture2D" uid="uid://17kvy7ffwbds" path="res://Sprite/Sprite - Rato/Rato_tomandoBanho.png" id="5_ysppp"]
+[ext_resource type="Texture2D" uid="uid://dw2iuf0b6eqcv" path="res://Sprite/Sprite - Minigames/botoes_jogo.png" id="6_ysppp"]
+[ext_resource type="Texture2D" uid="uid://ckr57du2tdkix" path="res://Sprite/Sprite - Banheiro/banheira_frente.png" id="7_etpxv"]
+[ext_resource type="Texture2D" uid="uid://r6jqvlic8o4t" path="res://Sprite/Sprite - Banheiro/Espuma_1.png" id="12_dtmvw"]
+[ext_resource type="Texture2D" uid="uid://opnjxey10yfv" path="res://Sprite/Sprite - Banheiro/Espuma_2.png" id="13_vorg8"]
+[ext_resource type="Texture2D" uid="uid://pto30egpfuu3" path="res://Sprite/Sprite - Banheiro/Espuma_3.png" id="14_r4yuo"]
+[ext_resource type="Texture2D" uid="uid://bt6mp044cebg7" path="res://Sprite/Sprite - Banheiro/Espuma_4.png" id="15_rv5f3"]
 
 [node name="TomarBanho" type="Node2D" unique_id=1511323946]
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=124925730]
-position = Vector2(956, 541)
-texture = ExtResource("1_22eiy")
+position = Vector2(962, 544)
+scale = Vector2(0.50189114, 0.50189114)
+texture = ExtResource("1_dyl7y")
+
+[node name="SetembroQuadroFeliz(1)" type="Sprite2D" parent="." unique_id=501633142]
+position = Vector2(800, 214.99998)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vxesr")
+region_enabled = true
+region_rect = Rect2(625.1227, 377.9865, 672.2451, 475.1206)
+
+[node name="SetembroJanela" type="Sprite2D" parent="." unique_id=1182795679]
+position = Vector2(1753, 269)
+scale = Vector2(0.72587776, 0.72587776)
+texture = ExtResource("3_ysppp")
+
+[node name="SetembroPrivada" type="Sprite2D" parent="." unique_id=84206341]
+position = Vector2(176, 300)
+scale = Vector2(0.8277223, 0.8277223)
+texture = ExtResource("4_wcjwq")
+region_enabled = true
+region_rect = Rect2(474.32117, 157.7668, 682.354, 1455.6885)
+
+[node name="BanheiraFundo" type="Sprite2D" parent="." unique_id=1237440356]
+position = Vector2(1210.0001, 657)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("5_sctfi")
+
+[node name="RatoTomandoBanho" type="Sprite2D" parent="." unique_id=984645046]
+position = Vector2(1170.2059, 536.5702)
+scale = Vector2(1.3952206, 1.3952208)
+texture = ExtResource("5_ysppp")
+
+[node name="BanheiraFrente" type="Sprite2D" parent="." unique_id=624297034]
+position = Vector2(1213.0001, 864.00006)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("7_etpxv")
 
 [node name="TomarBanho" type="Node2D" parent="." unique_id=87196159]
 script = ExtResource("2_22eiy")
 
 [node name="Sabao" type="Sprite2D" parent="TomarBanho" unique_id=736145127]
-position = Vector2(446, 719.99994)
-scale = Vector2(0.4, 0.4)
+position = Vector2(703, 671)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_5fljy")
 
 [node name="BotaoVerificar" type="Button" parent="TomarBanho" unique_id=1895870989]
-offset_top = 820.0
-offset_right = 400.0
-offset_bottom = 1089.0
-icon = ExtResource("4_fn05o")
+offset_left = -16.0
+offset_top = 850.0
+offset_right = 384.0
+offset_bottom = 1119.0
+theme_override_fonts/font = ExtResource("5_vxesr")
+theme_override_font_sizes/font_size = 42
+text = "Preciso muito de
+uma ducha!"
+icon = ExtResource("6_ysppp")
 flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Manchas" type="Node2D" parent="TomarBanho" unique_id=2101839735]
 
 [node name="Sujeira" type="Sprite2D" parent="TomarBanho/Manchas" unique_id=1222888538]
-position = Vector2(729, 441)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_j01hu")
+position = Vector2(1304, 450)
+scale = Vector2(1.363073, 1.363073)
+texture = ExtResource("12_dtmvw")
 
 [node name="Sujeira2" type="Sprite2D" parent="TomarBanho/Manchas" unique_id=549227157]
-position = Vector2(881, 712)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_j01hu")
+position = Vector2(1177, 146)
+scale = Vector2(1.6157498, 1.6157498)
+texture = ExtResource("13_vorg8")
 
 [node name="Sujeira3" type="Sprite2D" parent="TomarBanho/Manchas" unique_id=2079088477]
-position = Vector2(1090, 439)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_j01hu")
+position = Vector2(1077.0001, 645)
+scale = Vector2(1.5637995, 1.5637995)
+texture = ExtResource("14_r4yuo")
+
+[node name="Sujeira4" type="Sprite2D" parent="TomarBanho/Manchas" unique_id=1470357364]
+position = Vector2(1368, 743)
+scale = Vector2(1.4807742, 1.4807742)
+texture = ExtResource("15_rv5f3")
 
 [connection signal="pressed" from="TomarBanho/BotaoVerificar" to="TomarBanho" method="_on_botao_verificar_pressed"]

@@ -22,7 +22,7 @@ func _on_botao_verificar_pressed() -> void:
 		liberado = true
 		botao_verificar.visible = false
 	else:
-		print("Ainda não dá pra escovar o dente hoje!")
+		print("Meus dentes podem esperar mais um dia...")
 		Transicao.trocar_cena("res://scenes/Banheiro.tscn")
 
 func _input(event: InputEvent) -> void:

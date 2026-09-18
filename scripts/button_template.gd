@@ -14,8 +14,8 @@ func _on_pressed() -> void:
 		close_menu.process_mode = Node.PROCESS_MODE_DISABLED
 		close_menu.hide()
 	
-	#if unpause:
-		#get_tree().paused = false
+	if unpause:
+		get_tree().paused = false
 	
 	if change_scene != "":
 		get_tree().change_scene_to_file(change_scene)

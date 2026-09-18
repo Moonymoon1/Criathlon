@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://7cgptik2v5bh"]
 
 [ext_resource type="PackedScene" uid="uid://cdsdj5m8yipop" path="res://objects/button_template.tscn" id="2_1pij0"]
+[ext_resource type="FontFile" uid="uid://d30cd0yao0as0" path="res://Sprite/Srites - Certos/BadComic-Regular.ttf" id="2_bw6qx"]
+[ext_resource type="Texture2D" uid="uid://dw2iuf0b6eqcv" path="res://Sprite/Sprite - Minigames/botoes_jogo.png" id="3_pkxig"]
 
 [node name="main_menu_UI" type="Control" unique_id=1789508741]
 layout_mode = 3
@@ -29,8 +31,15 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_bw6qx")
+theme_override_font_sizes/font_size = 62
 text = "Start
 "
+icon = ExtResource("3_pkxig")
+flat = true
+icon_alignment = 1
 open_menu = NodePath("../../play_menu")
 close_menu = NodePath("..")
 
@@ -43,20 +52,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -10.0
-offset_right = 170.0
-offset_bottom = 410.0
+offset_left = -201.0
+offset_top = -428.0
+offset_right = 201.0
+offset_bottom = 418.00037
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 15
 
 [node name="play" parent="play_menu" unique_id=1952329969 node_paths=PackedStringArray("close_menu") instance=ExtResource("2_1pij0")]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_bw6qx")
+theme_override_font_sizes/font_size = 62
 text = "Play
 "
+icon = ExtResource("3_pkxig")
+flat = true
+icon_alignment = 1
 close_menu = NodePath("..")
 change_scene = "uid://b5ja67y4g01t2"
 
@@ -64,7 +79,13 @@ change_scene = "uid://b5ja67y4g01t2"
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_bw6qx")
+theme_override_font_sizes/font_size = 62
 text = "Options"
+icon = ExtResource("3_pkxig")
+flat = true
+icon_alignment = 1
 open_menu = NodePath("../../options_menu")
 close_menu = NodePath("..")
 
@@ -72,7 +93,13 @@ close_menu = NodePath("..")
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_bw6qx")
+theme_override_font_sizes/font_size = 62
 text = "Back"
+icon = ExtResource("3_pkxig")
+flat = true
+icon_alignment = 1
 open_menu = NodePath("../../start_menu")
 close_menu = NodePath("..")
 
@@ -97,30 +124,42 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_bw6qx")
 theme_override_font_sizes/font_size = 42
-text = "Music Volume"
+text = "Volume da Música"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="msc_volume_slider" type="HSlider" parent="options_menu" unique_id=108787357]
+modulate = Color(0.6862745, 0, 0, 1)
 layout_mode = 2
 
 [node name="sfx_volume_label" type="Label" parent="options_menu" unique_id=902543468]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_bw6qx")
 theme_override_font_sizes/font_size = 42
-text = "SFX Volume"
+text = "Volume de SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="sfx_volume_slider" type="HSlider" parent="options_menu" unique_id=1668872957]
+modulate = Color(0.6862745, 0, 0, 1)
 layout_mode = 2
 
 [node name="back" parent="options_menu" unique_id=455972408 node_paths=PackedStringArray("open_menu", "close_menu") instance=ExtResource("2_1pij0")]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-text = "Back"
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_bw6qx")
+theme_override_font_sizes/font_size = 62
+text = "Voltar"
+icon = ExtResource("3_pkxig")
+flat = true
+icon_alignment = 1
 open_menu = NodePath("../../play_menu")
 close_menu = NodePath("..")

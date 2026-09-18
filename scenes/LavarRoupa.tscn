@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://fwhgx8lhc0lo" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Mockup.png" id="1_y1lcn"]
 [ext_resource type="Script" uid="uid://ctk1sdxjub74i" path="res://scripts/RoupaSuja.gd" id="2_y1lcn"]
 [ext_resource type="Texture2D" uid="uid://ctwerlwkttr84" path="res://Sprite/Sprite - Minigames/roupa_suja_solto.png" id="3_7sjgo"]
+[ext_resource type="Texture2D" uid="uid://dw2iuf0b6eqcv" path="res://Sprite/Sprite - Minigames/botoes_jogo.png" id="5_y1lcn"]
 [ext_resource type="FontFile" uid="uid://dlct7e7lgcj5l" path="res://Sprite/Srites - Certos/Comicks.otf" id="6_7sjgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyaeq"]
@@ -36,63 +37,110 @@ size = Vector2(280, 262)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sjgo"]
 size = Vector2(280, 262)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooouy"]
+size = Vector2(280, 262)
+
 [node name="LavarRoupa" type="Node2D" unique_id=1247462825]
+scale = Vector2(0.835, 0.835)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=660003149]
-position = Vector2(1341.5, 834.75)
-scale = Vector2(0.6934896, 0.7696759)
+position = Vector2(1158, 656.00006)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_y1lcn")
 
 [node name="Node" type="Node" parent="." unique_id=1915204534]
 
+[node name="BotaoVerificar" type="Button" parent="Node" unique_id=1958471788]
+custom_minimum_size = Vector2(500, 100)
+offset_left = -42.0
+offset_top = -36.0
+offset_right = 458.0
+offset_bottom = 233.0
+theme_override_fonts/font = ExtResource("6_7sjgo")
+theme_override_font_sizes/font_size = 42
+text = "Preciso separar
+a Roupa suja"
+icon = ExtResource("5_y1lcn")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Area2D_Sujeira1" type="Area2D" parent="Node" unique_id=952504436]
+position = Vector2(-358, -301)
 script = ExtResource("2_y1lcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D_Sujeira1" unique_id=1616476570]
 position = Vector2(1372, 961)
+scale = Vector2(0.6, 0.6)
 shape = SubResource("RectangleShape2D_jyaeq")
 
 [node name="Roupa" type="Sprite2D" parent="Node/Area2D_Sujeira1" unique_id=1407078607]
 material = SubResource("ShaderMaterial_7sjgo")
 position = Vector2(1382, 943)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_7sjgo")
 
 [node name="Area2D_Sujeira2" type="Area2D" parent="Node" unique_id=592879351]
+position = Vector2(-203, -488)
 script = ExtResource("2_y1lcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D_Sujeira2" unique_id=245786476]
-position = Vector2(1771, 1415)
+position = Vector2(1768, 1435)
+scale = Vector2(0.6, 0.6)
 shape = SubResource("RectangleShape2D_y1lcn")
 
 [node name="Roupa" type="Sprite2D" parent="Node/Area2D_Sujeira2" unique_id=484855417]
 modulate = Color(0.53333336, 0.42352942, 0.7137255, 1)
 material = SubResource("CanvasItemMaterial_qt71a")
 position = Vector2(1774, 1418)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_7sjgo")
 
 [node name="Area2D_Sujeira3" type="Area2D" parent="Node" unique_id=51362485]
+position = Vector2(-328, -402)
 script = ExtResource("2_y1lcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D_Sujeira3" unique_id=627731645]
-position = Vector2(524, 1153)
+position = Vector2(518, 1136)
+scale = Vector2(0.6, 0.6)
 shape = SubResource("RectangleShape2D_7sjgo")
 
 [node name="Roupa" type="Sprite2D" parent="Node/Area2D_Sujeira3" unique_id=1744738599]
 modulate = Color(0.3882353, 0.85490197, 0.48235294, 1)
 position = Vector2(526, 1114)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_7sjgo")
 
-[node name="Button" type="Button" parent="Node" unique_id=1958471788]
-custom_minimum_size = Vector2(500, 100)
-offset_left = 41.0
-offset_top = 28.0
-offset_right = 207.0
-offset_bottom = 59.0
-theme_override_fonts/font = ExtResource("6_7sjgo")
-theme_override_font_sizes/font_size = 46
-text = "Separe a Roupa Suja"
+[node name="Area2D_Sujeira4" type="Area2D" parent="Node" unique_id=887323384]
+position = Vector2(144, -208)
+script = ExtResource("2_y1lcn")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D_Sujeira4" unique_id=1695675206]
+position = Vector2(515, 1142)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_ooouy")
+
+[node name="Roupa" type="Sprite2D" parent="Node/Area2D_Sujeira4" unique_id=177584330]
+modulate = Color(0.16470589, 0.45490196, 1, 1)
+position = Vector2(526, 1114)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_7sjgo")
+
+[node name="Area2D_Sujeira5" type="Area2D" parent="Node" unique_id=1596716507]
+position = Vector2(916, -867)
+script = ExtResource("2_y1lcn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D_Sujeira5" unique_id=696488475]
+position = Vector2(515, 1130)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_ooouy")
+
+[node name="Roupa" type="Sprite2D" parent="Node/Area2D_Sujeira5" unique_id=359130923]
+modulate = Color(1, 0.57254905, 0.25882354, 1)
+position = Vector2(526, 1114)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_7sjgo")
+
+[connection signal="pressed" from="Node/BotaoVerificar" to="Node/Area2D_Sujeira1" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="Node/Area2D_Sujeira1" to="Node/Area2D_Sujeira1" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Node/Area2D_Sujeira2" to="Node/Area2D_Sujeira1" method="_on_area_2d_sujeira_2_mouse_entered"]

@@ -20,7 +20,7 @@ func _on_area_lavar_rosto_input_event(viewport: Node, event: InputEvent, shape_i
 
 func _on_area_lavar_roupa_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		get_tree().change_scene_to_file(\"res://scenes/JogarRoupaCesto.tscn\")
+		get_tree().change_scene_to_file(\"res://scenes/LavarRoupa.tscn\")
 
 
 func _on_botao_quarto_pressed() -> void:
@@ -28,53 +28,53 @@ func _on_botao_quarto_pressed() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tluv1"]
-size = Vector2(244, 392)
+size = Vector2(191, 296)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl2yw"]
-size = Vector2(437, 109.25)
+size = Vector2(361, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhpll"]
-size = Vector2(855.5, 551.75)
+size = Vector2(671.5, 484.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyaeq"]
-size = Vector2(241, 301)
+size = Vector2(215.5, 261)
 
 [node name="Banheiro" type="Node2D" unique_id=1711276870]
 position = Vector2(-124, -57)
 script = SubResource("GDScript_bhpll")
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=579715134]
-position = Vector2(1418, 781.00006)
-scale = Vector2(0.67115504, 0.671155)
+position = Vector2(1088, 598)
+scale = Vector2(0.5064554, 0.5064554)
 texture = ExtResource("1_kl2yw")
 
 [node name="LavarRosto" type="Node2D" parent="." unique_id=1801283802]
 position = Vector2(1670, 391)
 
 [node name="AreaLavarRosto" type="Area2D" parent="LavarRosto" unique_id=1155796780]
-position = Vector2(-1036, -73)
+position = Vector2(-1171, -197)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LavarRosto/AreaLavarRosto" unique_id=713245949]
-position = Vector2(-10, 132)
+position = Vector2(-12.5, 154)
 shape = SubResource("RectangleShape2D_tluv1")
 
 [node name="Pin" type="Sprite2D" parent="LavarRosto/AreaLavarRosto" unique_id=953719429]
-position = Vector2(-7.9999995, 66.99999)
+position = Vector2(-13.999999, -15.999985)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_kl2yw")
 
 [node name="EscovarDente" type="Node2D" parent="." unique_id=1089664062]
-position = Vector2(140, 34)
+position = Vector2(13, -129)
 
 [node name="AreaEscovarDentes" type="Area2D" parent="EscovarDente" unique_id=1450915499]
 position = Vector2(465, 532)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EscovarDente/AreaEscovarDentes" unique_id=2095293242]
-position = Vector2(-7.5, 193.375)
+position = Vector2(-0.5, 186)
 shape = SubResource("RectangleShape2D_kl2yw")
 
 [node name="Pin" type="Sprite2D" parent="EscovarDente/AreaEscovarDentes" unique_id=1211423018]
-position = Vector2(0, 192.99998)
+position = Vector2(-3, 140.99998)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_kl2yw")
 
@@ -82,14 +82,14 @@ texture = ExtResource("2_kl2yw")
 position = Vector2(108, 37)
 
 [node name="AreaTomarBanho" type="Area2D" parent="TomarBanho" unique_id=972067870]
-position = Vector2(1577, 404)
+position = Vector2(1133, 106)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TomarBanho/AreaTomarBanho" unique_id=737338742]
-position = Vector2(506.25, 644.125)
+position = Vector2(450.25, 662.4375)
 shape = SubResource("RectangleShape2D_bhpll")
 
 [node name="Pin" type="Sprite2D" parent="TomarBanho/AreaTomarBanho" unique_id=601320674]
-position = Vector2(516.99994, 562)
+position = Vector2(418.99994, 352)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_kl2yw")
 
@@ -97,14 +97,14 @@ texture = ExtResource("2_kl2yw")
 position = Vector2(-634, 256)
 
 [node name="AreaLavarRoupa" type="Area2D" parent="LavarRoupa" unique_id=1437975709]
-position = Vector2(1590, 395)
+position = Vector2(1357, 169)
 
 [node name="CollisionShape_LR" type="CollisionShape2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=567556894]
-position = Vector2(96, 328)
+position = Vector2(83.25, 336.5)
 shape = SubResource("RectangleShape2D_jyaeq")
 
 [node name="Pin" type="Sprite2D" parent="LavarRoupa/AreaLavarRoupa" unique_id=1448845114]
-position = Vector2(90.99999, 341.99997)
+position = Vector2(85.99999, 170.99998)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_kl2yw")
 
