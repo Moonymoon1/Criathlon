@@ -13,7 +13,7 @@ config_version=5
 config/name="Criathlon"
 run/main_scene="uid://ibgatj1cr2yf"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://42lop5bgxpxb"
 
 [autoload]
 
