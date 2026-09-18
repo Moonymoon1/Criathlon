@@ -17,11 +17,11 @@ func _on_pressed() -> void:
 		get_tree().paused = false
 		
 	
-	if forward:
-		AudioManager.play_one_shot(forward_sfx)
+	#if forward:
+		#AudioManager.play_one_shot(forward_sfx)
 		
-	else:
-		AudioManager.play_one_shot(backward_sfx)
+	#else:
+		#AudioManager.play_one_shot(backward_sfx)
 	
 	if open_menu != null:
 		open_menu.process_mode = Node.PROCESS_MODE_INHERIT

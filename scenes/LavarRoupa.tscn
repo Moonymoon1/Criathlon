@@ -146,7 +146,6 @@ texture = ExtResource("3_7sjgo")
 [node name="Som" type="AudioStreamPlayer" parent="Node" unique_id=2043454243]
 unique_name_in_owner = true
 stream = ExtResource("6_3godn")
-volume_db = 10.0
 
 [connection signal="pressed" from="BotaoVerificar" to="Node/Area2D_Sujeira1" method="_on_botao_verificar_pressed"]
 [connection signal="mouse_entered" from="Node/Area2D_Sujeira1" to="Node/Area2D_Sujeira1" method="_on_mouse_entered"]

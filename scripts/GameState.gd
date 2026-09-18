@@ -27,6 +27,8 @@ func _atividades_do_dia(dia: int) -> Array:
 			return ["lavar_rosto"]
 		2:
 			return ["lavar_rosto", "escovar_dente"]
+		3:
+			return ["lavar_rosto", "escovar_dente", "tomar_banho"]
 		_:
 			return ["lavar_rosto", "escovar_dente", "tomar_banho", "lavar_roupa"]
 
