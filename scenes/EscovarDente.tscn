@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ds3pmm2cbs7tg" path="res://Sprite/Sprite - Banheiro/SETEMBRO_Background_SJanela.png" id="6_416hn"]
 [ext_resource type="FontFile" uid="uid://dlct7e7lgcj5l" path="res://Sprite/Srites - Certos/Comicks.otf" id="7_rn50q"]
 [ext_resource type="Texture2D" uid="uid://dw2iuf0b6eqcv" path="res://Sprite/Sprite - Minigames/botoes_jogo.png" id="8_j53xn"]
-[ext_resource type="AudioStream" uid="uid://c13xskrl7x2lc" path="res://Audio/SFXescovar2.wav" id="9_j53xn"]
 
 [node name="EscovarDente" type="Node2D" unique_id=83990400]
 
@@ -55,10 +54,6 @@ os dentes"
 icon = ExtResource("8_j53xn")
 flat = true
 icon_alignment = 1
-
-[node name="Som" type="AudioStreamPlayer" parent="Escovar" unique_id=1045322004]
-stream = ExtResource("9_j53xn")
-volume_db = 10.0
 
 [connection signal="pressed" from="Escovar/BotaoVerificar" to="Escovar" method="_on_button_pressed"]
 [connection signal="pressed" from="Escovar/BotaoVerificar" to="Escovar" method="_on_botao_verificar_pressed"]

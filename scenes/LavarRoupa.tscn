@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://ctk1sdxjub74i" path="res://scripts/RoupaSuja.gd" id="2_y1lcn"]
 [ext_resource type="Texture2D" uid="uid://ctwerlwkttr84" path="res://Sprite/Sprite - Minigames/roupa_suja_solto.png" id="3_7sjgo"]
 [ext_resource type="Texture2D" uid="uid://dw2iuf0b6eqcv" path="res://Sprite/Sprite - Minigames/botoes_jogo.png" id="5_y1lcn"]
-[ext_resource type="AudioStream" uid="uid://bmvc4hayvqmpq" path="res://Audio/SFXguardando-roupas.wav" id="6_3godn"]
 [ext_resource type="FontFile" uid="uid://dlct7e7lgcj5l" path="res://Sprite/Srites - Certos/Comicks.otf" id="6_7sjgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyaeq"]
@@ -142,11 +141,6 @@ modulate = Color(1, 0.57254905, 0.25882354, 1)
 position = Vector2(526, 1114)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_7sjgo")
-
-[node name="Som" type="AudioStreamPlayer" parent="Node" unique_id=2043454243]
-unique_name_in_owner = true
-stream = ExtResource("6_3godn")
-volume_db = 10.0
 
 [connection signal="pressed" from="BotaoVerificar" to="Node/Area2D_Sujeira1" method="_on_botao_verificar_pressed"]
 [connection signal="mouse_entered" from="Node/Area2D_Sujeira1" to="Node/Area2D_Sujeira1" method="_on_mouse_entered"]

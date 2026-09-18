@@ -24,7 +24,6 @@ func _on_input_event(viewport, event, shape_idx):
 		return
 
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		%Som.play()
 		$Roupa.visible = false
 		terminou = true
 		progresso += 1
@@ -33,7 +32,7 @@ func _on_input_event(viewport, event, shape_idx):
 			print("Prontinho, tudo no seu lugar!")
 			var avancou_dia: bool = GameState.completar("lavar_roupa")
 			if avancou_dia and GameState.jogo_terminou():
-				Transicao.trocar_cena_com_final("res://scenes/main_menu.tscn")
+				Transicao.trocar_cena("res://scenes/main_menu.tscn")
 			elif avancou_dia:
 				Transicao.trocar_cena_com_passagem_de_dia("res://scenes/Banheiro.tscn")
 			else:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck1565av85i84"]
 
-[ext_resource type="Script" uid="uid://cflf272c2w8i5" path="res://scripts/audio_manager.gd" id="1_w2oyu"]
+[ext_resource type="Script" uid="uid://blr0lb7e15ptp" path="res://scripts/audio_manager.gd" id="1_w2oyu"]
 [ext_resource type="PackedScene" uid="uid://eigc4s7exfv3" path="res://objects/audio_one_shot.tscn" id="2_6x73q"]
 
 [node name="audio_manager" type="Node" unique_id=101974807 node_paths=PackedStringArray("clips", "one_shots")]

@@ -15,11 +15,9 @@ extends Button
 func _on_pressed() -> void:
 	if unpause:
 		get_tree().paused = false
-		
 	
 	if forward:
 		AudioManager.play_one_shot(forward_sfx)
-		
 	else:
 		AudioManager.play_one_shot(backward_sfx)
 	
