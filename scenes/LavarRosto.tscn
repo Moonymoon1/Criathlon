@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b052gqw47v3m8" path="res://Sprite/Sprite - Banheiro/pano_de_rosto_asset.png" id="4_7tnwb"]
 [ext_resource type="FontFile" uid="uid://dlct7e7lgcj5l" path="res://Sprite/Srites - Certos/Comicks.otf" id="6_utyry"]
 [ext_resource type="Texture2D" uid="uid://dw2iuf0b6eqcv" path="res://Sprite/Sprite - Minigames/botoes_jogo.png" id="7_u0wub"]
+[ext_resource type="AudioStream" uid="uid://niqc0hb362au" path="res://Audio/SFXlimpando-rosto2.wav" id="8_u0wub"]
 
 [node name="LavarRosto" type="Node2D" unique_id=665535272]
 
@@ -49,5 +50,10 @@ icon = ExtResource("7_u0wub")
 flat = true
 autowrap_trim_flags = 0
 icon_alignment = 1
+
+[node name="Som" type="AudioStreamPlayer" parent="GameLavarRosto" unique_id=1967090877]
+unique_name_in_owner = true
+stream = ExtResource("8_u0wub")
+volume_db = 10.0
 
 [connection signal="pressed" from="GameLavarRosto/BotaoVerificar" to="GameLavarRosto" method="_on_botao_verificar_pressed"]

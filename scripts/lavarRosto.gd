@@ -34,6 +34,7 @@ func _input(event: InputEvent) -> void:
 		if event.pressed and toalha.global_position.distance_to(event.position) < 60.0:
 			arrastando = true
 			ultimo_angulo = (event.position - centro).angle()
+			%Som.play()
 		elif not event.pressed:
 			arrastando = false
 
@@ -53,7 +54,7 @@ func _input(event: InputEvent) -> void:
 			print("Rosto lavado!")
 			var avancou_dia: bool = GameState.completar("lavar_rosto")
 			if avancou_dia and GameState.jogo_terminou():
-				Transicao.trocar_cena("res://scenes/main_menu.tscn")
+				Transicao.trocar_cena_com_final("res://scenes/main_menu.tscn")
 			elif avancou_dia:
 				Transicao.trocar_cena_com_passagem_de_dia("res://scenes/Banheiro.tscn")
 			else:

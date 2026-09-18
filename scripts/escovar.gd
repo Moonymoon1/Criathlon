@@ -6,7 +6,6 @@ extends Node2D
 @onready var escova: Node2D = $Escova
 @onready var espuma: Sprite2D = $Espuma
 @onready var botao_verificar: Button = $BotaoVerificar
-@onready var som: AudioStreamPlayer = $Som
 
 var liberado: bool = false
 var arrastando: bool = false
@@ -34,11 +33,13 @@ func _input(event: InputEvent) -> void:
 		if event.pressed and escova.global_position.distance_to(event.position) < 60.0:
 			arrastando = true
 			posicao_inicial_x = event.position.x
+			$Som.play()
 		elif not event.pressed:
 			arrastando = false
 
 	if event is InputEventMouseMotion and arrastando:
 		escova.global_position.x = event.position.x
+		
 
 		var diferenca: float = event.position.x - posicao_inicial_x
 		if abs(diferenca) >= distancia_minima:
@@ -46,15 +47,13 @@ func _input(event: InputEvent) -> void:
 			if direcao_atual != ultima_direcao and ultima_direcao != 0:
 				contador += 1
 				espuma.modulate.a = float(contador) / movimentos_necessarios
-				som.play()
 
 				if contador >= movimentos_necessarios:
 					terminou = true
 					print("Dente escovado!")
-					som.stop()
 					var avancou_dia: bool = GameState.completar("escovar_dente")
 					if avancou_dia and GameState.jogo_terminou():
-						Transicao.trocar_cena("res://scenes/main_menu.tscn")
+						Transicao.trocar_cena_com_final("res://scenes/main_menu.tscn")
 					elif avancou_dia:
 						Transicao.trocar_cena_com_passagem_de_dia("res://scenes/Banheiro.tscn")
 					else:

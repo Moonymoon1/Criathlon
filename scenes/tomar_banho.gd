@@ -31,11 +31,13 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and sabao.global_position.distance_to(event.position) < 60.0:
 			arrastando = true
+			%Som.play()
 		elif not event.pressed:
 			arrastando = false
 
 	if event is InputEventMouseMotion and arrastando:
 		sabao.global_position = event.position
+		
 
 		for mancha in manchas:
 			if mancha["limpa"]:
@@ -61,7 +63,7 @@ func _verificar_fim() -> void:
 	print("Banho concluído!")
 	var avancou_dia: bool = GameState.completar("tomar_banho")
 	if avancou_dia and GameState.jogo_terminou():
-		Transicao.trocar_cena("res://scenes/main_menu.tscn")
+		Transicao.trocar_cena_com_final("res://scenes/main_menu.tscn")
 	elif avancou_dia:
 		Transicao.trocar_cena_com_passagem_de_dia("res://scenes/Banheiro.tscn")
 	else:

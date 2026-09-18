@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://opnjxey10yfv" path="res://Sprite/Sprite - Banheiro/Espuma_2.png" id="13_vorg8"]
 [ext_resource type="Texture2D" uid="uid://pto30egpfuu3" path="res://Sprite/Sprite - Banheiro/Espuma_3.png" id="14_r4yuo"]
 [ext_resource type="Texture2D" uid="uid://bt6mp044cebg7" path="res://Sprite/Sprite - Banheiro/Espuma_4.png" id="15_rv5f3"]
+[ext_resource type="AudioStream" uid="uid://do5kc6mcuvdik" path="res://Audio/SFXchuveiro2.wav" id="16_sctfi"]
 
 [node name="TomarBanho" type="Node2D" unique_id=1511323946]
 
@@ -100,5 +101,10 @@ texture = ExtResource("14_r4yuo")
 position = Vector2(1368, 743)
 scale = Vector2(1.4807742, 1.4807742)
 texture = ExtResource("15_rv5f3")
+
+[node name="Som" type="AudioStreamPlayer" parent="TomarBanho" unique_id=1315608307]
+unique_name_in_owner = true
+stream = ExtResource("16_sctfi")
+volume_db = 10.0
 
 [connection signal="pressed" from="TomarBanho/BotaoVerificar" to="TomarBanho" method="_on_botao_verificar_pressed"]
